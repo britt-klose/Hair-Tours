@@ -12,6 +12,18 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const availability = [
+  {
+    time: '3:00'
+  },
+  {
+    time: '4:00'
+  },
+  {
+    time: '5:00'
+  }
+]
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -36,7 +48,7 @@ function App() {
             />
             <Route
             path="/calendar"
-            element={<Calendar />}
+            element={<Calendar availability={availability}/>}
             />
           </Routes>
         </div>
