@@ -5,11 +5,24 @@ import Home from './pages/Home';
 import Matchup from './pages/Matchup';
 import Vote from './pages/Vote';
 import NotFound from './pages/NotFound';
+import Calendar from './pages/Calendar';
 
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
 });
+
+const availability = [
+  {
+    time: '3:00'
+  },
+  {
+    time: '4:00'
+  },
+  {
+    time: '5:00'
+  }
+]
 
 function App() {
   return (
@@ -32,6 +45,10 @@ function App() {
             <Route 
               path="*"
               element={<NotFound />}
+            />
+            <Route
+            path="/calendar"
+            element={<Calendar availability={availability}/>}
             />
           </Routes>
         </div>
