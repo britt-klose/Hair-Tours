@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Matchup from './pages/Matchup';
 import Vote from './pages/Vote';
 import NotFound from './pages/NotFound';
+import Header from "./components/header";
 import Calendar from './pages/Calendar';
 
 const client = new ApolloClient({
@@ -26,7 +27,10 @@ const availability = [
 
 function App() {
   return (
+    <div>
+    <Header/>
     <ApolloProvider client={client}>
+     
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Routes>
@@ -54,6 +58,7 @@ function App() {
         </div>
       </Router>
     </ApolloProvider>
+    </div>
   );
 }
 
