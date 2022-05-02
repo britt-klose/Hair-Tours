@@ -14,5 +14,10 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.3.0"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@mui/icons-material": "^5.6.2",
+    "@mui/material": "^5.6.3"
   }
 }
