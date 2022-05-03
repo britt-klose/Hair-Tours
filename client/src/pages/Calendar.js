@@ -22,7 +22,7 @@ const Calendar = (props) => {
         //reroute to home page, send confirmation email
       } else {
         console.log("the thing is not done");
-        //exit function
+        //return to select date
       }
     }
   }

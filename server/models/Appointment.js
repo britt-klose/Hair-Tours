@@ -1,32 +1,34 @@
-const{Schema}= require('mongoose');
+const { Schema, Types } = require("mongoose");
 
-const apptSchema=new Schema({
-    ApptId:{
-    type: String,
+const apptSchema = new Schema({
+  ApptId: {
+    type: Schema.Types.ObjectId,
+    default: () => new Types.ObjectId(),
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    get: (timestamp) => dateFormat(timestamp),
+  },
+  scheduledFor: {
+    type: Date,
+    // default: Date.now,
     required: true
-    },
-     
-    createdAt: {
-        type: Date,
-        default: Date.now,
-        get: timestamp => dateFormat(timestamp)
-      },
-    scheduledFor:{
-        type: Date,
-        default: Date.now,
-    },
-    stylist:{
-        type: String,
-        required: true,
-    },
-    client:{
-        type: String,
-        required: true,
-    },
-    service:{
-        type: String,
-        required: true,
-    }
+  },
+  stylist: {
+    type: String,
+    required: true,
+  },
+  client: {
+    type: String,
+    required: true,
+  },
+  service: {
+    type: String,
+    required: true,
+  },
 });
 
-module.exports=apptSchema;
+// const Appointments = model("Appointment", apptSchema)
+
+module.exports = apptSchema;

@@ -28,36 +28,23 @@ const availability = [
 function App() {
   return (
     <div>
-    <Header/>
-    <ApolloProvider client={client}>
-     
-      <Router>
-        <div className="flex-column justify-center align-center min-100-vh bg-primary">
-          <Routes>
-            <Route 
-              path="/" 
-              element={<Home />}
-            />
-            <Route 
-              path="/matchup" 
-              element={<Matchup />}
-            />
-            <Route 
-              path="/matchup/:id" 
-              element={<Vote />}
-            />
-            <Route 
-              path="*"
-              element={<NotFound />}
-            />
-            <Route
-            path="/calendar"
-            element={<Calendar availability={availability}/>}
-            />
-          </Routes>
-        </div>
-      </Router>
-    </ApolloProvider>
+      <Header/>
+      <ApolloProvider client={client}>
+        <Router>
+          <div className="flex-column justify-center align-center min-100-vh bg-primary">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/matchup" element={<Matchup />} />
+              <Route path="/matchup/:id" element={<Vote />} />
+              <Route path="*" element={<NotFound />} />
+              <Route
+                path="/calendar"
+                element={<Calendar availability={availability} />}
+              />
+            </Routes>
+          </div>
+        </Router>
+      </ApolloProvider>
     </div>
   );
 }

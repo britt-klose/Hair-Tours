@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    savedAppts:[apptSchema]
+    savedAppts:[Appointment]
   }
 
   type Stylist {
@@ -16,21 +16,28 @@ const typeDefs = gql`
     password: String
     status: String
     availability: String
-    offeredServices: [servicesSchema]
-    reviews: [reviewShema]
-    savedAppts:[apptSchema]
+    offeredServices: [Services]
+    reviews: [Review]
+    savedAppts:[Appointment]
+  }
+
+  type Services {
+    _id: ID
+    name: String
+    price: Int
   }
 
   type Review{
+    _id: ID
     username: String
     description: String
-    createdAt: Date
-    rating: Number
+    createdAt: String
+    rating: Int
   }
   type Query {
     users: [User]
     user(username: String!): User
-    savedAppts(username: String): [ApptSchema]
+    savedAppts(username: String): [Appointment]
     me: User
   }
 
@@ -39,14 +46,14 @@ const typeDefs = gql`
     client: String
     stylist: String
     service: String
-    scheduledFor: Date
+    scheduledFor: String
   }
 
   input ApptInput{
     client: String
     stylist: String
     service: String
-    scheduledFor: Date
+    scheduledFor: String
   }
 
   type Auth{
@@ -56,7 +63,7 @@ const typeDefs = gql`
 
   type Mutation {
     saveAppt(input: ApptInput): Appointment
-    addReview(username: String!, description: String!, createdAt: Date!, rating: Number!): Review
+    addReview(username: String!, description: String!, createdAt: String!, rating: Int!): Review
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
   }
