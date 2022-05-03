@@ -17,7 +17,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  savedAppointments:[apptSchema],
+  savedAppts:[apptSchema],
 },
 {
   toJSON: {
