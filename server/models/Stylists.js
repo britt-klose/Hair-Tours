@@ -30,7 +30,7 @@ const stylistsSchema = new Schema(
       type: String,
       required: true,
     },
-    currentBookings: [apptSchema],
+    savedAppts: [apptSchema],
     offeredServices: [servicesSchema],
     reviews: [reviewShema],
   },
