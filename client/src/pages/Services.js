@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ServicesChecklist from "../components/servicesChecklist";
 
 import { useNavigate } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
@@ -44,16 +45,7 @@ const Services = () => {
       <div className="card-body m-5">
         <form onSubmit={handleFormSubmit}>
           <label>Services </label>
-          <div name="services" onChange={handleInputChange}>
-            {servicesList.map((service) => {
-              return (
-                <div key={service._id} value={service.name}>
-                  {service.img}
-                  {service.name}
-                </div>
-              );
-            })}
-          </div>
+          <ServicesChecklist onClick={handleInputChange} value={servicesList} />
           <button className="btn btn-danger" type="submit">
             Find a Provider
           </button>
