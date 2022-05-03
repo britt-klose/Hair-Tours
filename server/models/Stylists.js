@@ -3,8 +3,8 @@ const bcrypt = require("bcrypt");
 
 //importing serviceschema apptschema and reviewschema
 const servicesSchema = require("./Services");
-const apptSchema = require("");
-const reviewShema = require("./Reviews");
+const apptSchema = require("./Appointment");
+const reviewSchema = require("./Reviews");
 
 const stylistsSchema = new Schema(
   {
@@ -32,7 +32,7 @@ const stylistsSchema = new Schema(
     },
     savedAppts: [apptSchema],
     offeredServices: [servicesSchema],
-    reviews: [reviewShema],
+    reviews: [reviewSchema],
   },
   {
     toJSON: {
