@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { StyledEngineProvider } from '@mui/material/styles';
-import Demo from './demo';
+//import { StyledEngineProvider } from '@mui/material/styles';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,8 +12,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-ReactDOM.createRoot(document.querySelector("#root")).render(
-  <StyledEngineProvider injectFirst>
-    <Demo />
-  </StyledEngineProvider>
-);
