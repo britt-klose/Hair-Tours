@@ -1,6 +1,6 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
-export const QUERY_TECH = gql`
+export const QUERY_SERVICES = gql`
   query tech {
     tech {
       _id
@@ -9,7 +9,7 @@ export const QUERY_TECH = gql`
   }
 `;
 
-export const QUERY_MATCHUPS = gql`
+export const QUERY_PROVIDERS = gql`
   query matchups($_id: String) {
     matchups(_id: $_id) {
       _id

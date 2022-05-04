@@ -23,11 +23,10 @@ const Provider = () => {
   //   };
 
   return (
-    <div className="card bg-white card-rounded w-50">
+    <div>
       <div className="card-header bg-dark text-center">
-        <h1>Providers offering services you desire:</h1>
+        <h1>Provider Name</h1>
       </div>
-
       <div className="card-body text-center mt-3">
         <div name="services">
           {/* onChange={handleServices}>
