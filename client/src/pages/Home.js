@@ -24,7 +24,7 @@ const Home = () => {
           marginLeft: "25%",
           marginTop: "10%",
           display: "flex",
-          height: "20%",
+          height: "30%",
           width: "50%",
           boxShadow: "0 0 3px 2px #cec7c759",
           alignItems: "center",
@@ -37,7 +37,7 @@ const Home = () => {
         <div className="text-center m-3">
           <h1 style={{ marginBottom: 30 }}>Welcome to Hair Tours!</h1>
           <h2>Ready to Get Styled?</h2>
-          <Link to="/matchup">
+          <Link to="/services">
             <button className="btn btn-lg btn-danger">
               Find a Service Provider!
             </button>

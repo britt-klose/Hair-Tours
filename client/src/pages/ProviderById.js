@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // import { ADD_PROVIDER } from "../utils/mutations";
 // import { QUERY_PROVIDERS } from "../utils/queries";
 
-const Provider = () => {
+const ProviderbyId = () => {
   //   let { id } = useParams();
 
   //   const { data } = useQuery(QUERY_PROVIDERS, {
@@ -23,8 +23,8 @@ const Provider = () => {
   //   };
 
   return (
-    <div>
-      <div className="card-header bg-dark text-center">
+    <div style={{ width: "80%", height: "100%", background: "white" }}>
+      <div>
         <h1>Provider Name</h1>
       </div>
       <div className="card-body text-center mt-3">
@@ -45,10 +45,8 @@ const Provider = () => {
         ></button>{" "}
         <div className="card-footer text-center m-3">
           <br></br>
-          <Link to="/">
-            <button className="btn btn-lg btn-danger">
-              View all Providers
-            </button>
+          <Link to="/calendar">
+            <button className="btn btn-lg btn-danger">Schedule Now!</button>
           </Link>
         </div>
       </div>
@@ -56,4 +54,4 @@ const Provider = () => {
   );
 };
 
-export default Provider;
+export default ProviderbyId;
