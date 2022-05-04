@@ -6,6 +6,8 @@ import { useMutation, useQuery } from "@apollo/client";
 import { QUERY_SERVICES } from "../utils/queries";
 import { SAVE_SERVICES } from "../utils/mutations";
 
+//to do: six image buttons for the services check button style 
+
 const Services = () => {
   const { data } = useQuery(QUERY_SERVICES);
 

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import { ADD_PROVIDER } from "../utils/mutations";
 // import { QUERY_PROVIDERS } from "../utils/queries";
 
+
 const Provider = () => {
   //   let { id } = useParams();
 
@@ -57,3 +58,6 @@ const Provider = () => {
 };
 
 export default Provider;
+
+//stylist profile page
+//instagram style (profile picture, bio, calender for booking )
