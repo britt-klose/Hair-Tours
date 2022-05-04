@@ -1,6 +1,6 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
-export const CREATE_MATCHUP = gql`
+export const SAVE_SERVICES = gql`
   mutation createMatchup($tech1: String!, $tech2: String!) {
     createMatchup(tech1: $tech1, tech2: $tech2) {
       _id
@@ -10,7 +10,7 @@ export const CREATE_MATCHUP = gql`
   }
 `;
 
-export const CREATE_VOTE = gql`
+export const ADD_PROVIDER = gql`
   mutation createVote($_id: String!, $techNum: Int!) {
     createVote(_id: $_id, techNum: $techNum) {
       _id
