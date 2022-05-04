@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
-const apptSchema = require("../models/Appointment");
+const apptSchema = require("./Appointment");
 
 const userSchema = new Schema(
   {
@@ -19,7 +19,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    savedAppointments: [apptSchema],
+    savedAppts: [apptSchema],
   },
   {
     toJSON: {

@@ -1,27 +1,71 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Tech {
+  type User {
     _id: ID!
-    name: String!
+    username: String
+    email: String
+    password: String
+    savedAppts:[Appointment]
   }
 
-  type Matchup {
-    _id: ID!
-    tech1: String!
-    tech2: String!
-    tech1_votes: Int
-    tech2_votes: Int
+  type Stylist {
+    _id: ID
+    username: String
+    email: String
+    password: String
+    status: String
+    availability: String
+    offeredServices: [Services]
+    reviews: [Review]
+    savedAppts:[Appointment]
   }
 
+  type Services {
+    _id: ID
+    name: String
+    price: Int
+  }
+
+  type Review{
+    _id: ID
+    username: String
+    description: String
+    createdAt: String
+    rating: Int
+  }
   type Query {
-    tech: [Tech]
-    matchups(_id: String): [Matchup]
+    users: [User]
+    user(username: String!): User
+    savedAppts(username: String): [Appointment]
+    me: User
+  }
+
+  type Appointment{
+    ApptId: String
+    client: String
+    stylist: String
+    service: String
+    scheduledFor: String
+  }
+
+  input ApptInput{
+    client: String
+    stylist: String
+    service: String
+    scheduledFor: String
+  }
+
+  type Auth{
+    token: ID!
+    user: User
   }
 
   type Mutation {
-    createMatchup(tech1: String!, tech2: String!): Matchup
-    createVote(_id: String!, techNum: Int!): Matchup
+    saveAppt(input: ApptInput): Appointment
+    addReview(username: String!, description: String!, createdAt: String!, rating: Int!): Review
+    addUser(username: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
   }
 `;
 
