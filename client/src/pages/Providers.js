@@ -1,11 +1,10 @@
 import { useQuery, useMutation } from "@apollo/client";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { ADD_PROVIDER } from "../utils/mutations";
 import { QUERY_PROVIDERS } from "../utils/queries";
+import Provider from "../components/Provider";
 
-
-
-const Provider = () => {
+const Providers = () => {
   let { id } = useParams();
 
   const { data } = useQuery(QUERY_PROVIDERS, {
@@ -29,7 +28,7 @@ const Provider = () => {
   return (
     <div className="card bg-white card-rounded w-50">
       <div className="card-header bg-dark text-center">
-        <h1>Providers offering services you desire:</h1>
+        <h1>Providers:</h1>
       </div>
 
       <div className="card-body text-center mt-3">
@@ -43,21 +42,13 @@ const Provider = () => {
             );
           })}
         </div>
-        <button
-          className="btn btn-info"
-          onClick={() => handleServices()}
-        ></button>{" "}
         <div className="card-footer text-center m-3">
           <br></br>
-          <Link to="/">
-            <button className="btn btn-lg btn-danger">
-              View all Providers
-            </button>
-          </Link>
+          <Provider />
         </div>
       </div>
     </div>
   );
 };
 
-export default Provider;
+export default Providers;
