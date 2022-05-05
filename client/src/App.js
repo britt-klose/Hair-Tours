@@ -8,6 +8,7 @@ import ProviderById from "./pages/ProviderById";
 import Checkout from "./pages/checkout/Checkout";
 import NotFound from "./pages/NotFound";
 import Header from "./components/header";
+import Footer from "./components/footer";
 import Calendar from "./pages/Calendar";
 
 const client = new ApolloClient({
@@ -49,6 +50,7 @@ function App() {
           </div>
         </Router>
       </ApolloProvider>
+      <Footer />
     </div>
   );
 }
