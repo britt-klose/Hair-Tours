@@ -3,6 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import { ADD_PROVIDER } from "../utils/mutations";
 import { QUERY_PROVIDERS } from "../utils/queries";
 
+
+
 const Provider = () => {
   let { id } = useParams();
 
