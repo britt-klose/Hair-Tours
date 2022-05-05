@@ -3,6 +3,7 @@
 // import { useQuery, useMutation } from "@apollo/client";
 // import { useParams } from "react-router-dom";
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Provider() {
   //   let { id } = useParams();
@@ -26,14 +27,16 @@ export default function Provider() {
   //   };
 
   return (
-    <div className="card bg-white card-rounded w-50">
-      <div className="card-header bg-dark text-center">
-        <h1>Providers offering services you desire:</h1>
+    <div className="card bg-white card-rounded">
+      <div className="card-header bg-dark text-start">
+        <h1>Name:</h1>
       </div>
 
       <div className="card-body text-center mt-3">
         <div></div>
-        <button className="btn btn-info"></button>{" "}
+        <Link to="/providers/1">
+          <button className="btn btn-info">Book it</button>{" "}
+        </Link>
         <div className="card-footer text-center m-3"></div>
       </div>
     </div>
