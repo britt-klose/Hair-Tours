@@ -30,15 +30,15 @@ const ReviewForm = ({ profileId }) => {
 
   return (
     <div>
-      <h4>Review this Provider</h4>
+      <h4>Review this Stylist</h4>
 
       {/* {Auth.loggedIn() ? ( */}
       <form
         className="flex-column justify-center justify-space-between-md align-center"
         onSubmit={handleFormSubmit}
       >
-        <Ratings />
-        <div className="flex-row">
+        <Ratings className="align-content-start justify-flex-start w-25" />
+        <div className="flex-row w-100">
           <input
             placeholder="Were you satisfied with your last service?"
             value={review}
