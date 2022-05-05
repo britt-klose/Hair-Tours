@@ -1,7 +1,7 @@
 const { Schema, Types } = require("mongoose");
-
+//might be deleted and just do it all through calendy
 const apptSchema = new Schema({
-  ApptId: {
+  apptId: {
     type: Schema.Types.ObjectId,
     default: () => new Types.ObjectId(),
   },
@@ -11,8 +11,7 @@ const apptSchema = new Schema({
     get: (timestamp) => dateFormat(timestamp),
   },
   scheduledFor: {
-    type: Date,
-    // default: Date.now,
+    type: String,
     required: true
   },
   stylist: {

@@ -1,7 +1,11 @@
-const { Schema } = require("mongoose");
+const { Schema, Types } = require("mongoose");
 
 const reviewSchema = new Schema({
-  username: {
+  reviewId:{
+    type: Schema.Types.ObjectId,
+    default: () => new Types.ObjectId(),
+  },
+  reviewAuthor: {
     type: String,
     required: true,
   },
@@ -15,7 +19,7 @@ const reviewSchema = new Schema({
     get: (timestamp) => dateFormat(timestamp),
   },
   rating: {
-    type: Number,
+    type: Int,
     default: 0,
   },
 });

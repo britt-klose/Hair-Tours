@@ -1,16 +1,20 @@
-const { Schema } = require("mongoose");
+const { Schema, Types} = require("mongoose");
 
 const servicesSchema = new Schema({
-  name: {
+  serviceId:{
+    type: Schema.Types.ObjectId,
+    default: () => new Types.ObjectId(),
+  },
+  serviceName: {
     type: String,
     required: true,
   },
   price: {
-    type: Number,
+    type: Int,
     default: 0,
   },
 });
 
-// const Services = model("Services", servicesSchema);
+// const Services= model("Services", servicesSchema);
 
 module.exports = servicesSchema;
