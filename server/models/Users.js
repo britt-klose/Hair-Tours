@@ -1,6 +1,9 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
+
 const apptSchema = require("./Appointment");
+const reviewSchema = require("./Reviews");
+const servicesSchema=require('./Services')
 
 const userSchema = new Schema(
   {
@@ -19,7 +22,17 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    status: {
+      type: String,
+      required: false,
+    },
+    availability: {
+      type: String,
+      required: false,
+    },
     savedAppts: [apptSchema],
+    services: [servicesSchema],
+    reviews: [reviewSchema],
   },
   {
     toJSON: {
