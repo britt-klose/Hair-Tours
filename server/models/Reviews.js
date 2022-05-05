@@ -18,10 +18,6 @@ const reviewSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-  rating: {
-    type: Int,
-    default: 0,
-  },
 });
 
 // const Reviews = model('Review', reviewSchema)
