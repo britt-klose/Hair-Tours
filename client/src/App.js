@@ -1,34 +1,35 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import Home from './pages/Home';
-import Matchup from './pages/Matchup';
-import Vote from './pages/Vote';
-import NotFound from './pages/NotFound';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import Providers from "./pages/Providers";
+import ProvidersById from "./pages/ProviderById";
+import Checkout from "./pages/checkout/Checkout";
+import NotFound from "./pages/NotFound";
 import Header from "./components/header";
-import Calendar from './pages/Calendar';
+import Calendar from "./pages/Calendar";
 
 const client = new ApolloClient({
-  uri: '/graphql',
+  uri: "/graphql",
   cache: new InMemoryCache(),
 });
 
 function App() {
   return (
     <div>
-      <Header/>
+      <Header />
       <ApolloProvider client={client}>
         <Router>
           <div className="flex-column justify-center align-center min-100-vh bg-primary">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/matchup" element={<Matchup />} />
-              <Route path="/matchup/:id" element={<Vote />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/providers" element={<Providers />} />
+              <Route path="/providers/:id" element={<ProvidersById />} />
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="*" element={<NotFound />} />
-              <Route
-                path="/calendar"
-                element={<Calendar />}
-              />
+              <Route path="/calendar" element={<Calendar />} />
             </Routes>
           </div>
         </Router>
