@@ -2,6 +2,8 @@
 import { Link } from "react-router-dom";
 // import { ADD_PROVIDER } from "../utils/mutations";
 // import { QUERY_PROVIDERS } from "../utils/queries";
+import ReviewList from "../components/ReviewList";
+import ReviewForm from "../components/ReviewForm";
 
 const ProviderbyId = () => {
   //   let { id } = useParams();
@@ -26,6 +28,8 @@ const ProviderbyId = () => {
     <div style={{ width: "80%", height: "100%", background: "white" }}>
       <div>
         <h1>Provider Name</h1>
+        <h3>Location:</h3>
+        <h3>Phone:</h3>
       </div>
       <div className="card-body text-center mt-3">
         <div name="services">
@@ -39,16 +43,16 @@ const ProviderbyId = () => {
              );
            })} */}
         </div>
-        <button
-          className="btn btn-info"
-          //   onClick={() => handleServices()}
-        ></button>{" "}
         <div className="card-footer text-center m-3">
           <br></br>
           <Link to="/calendar">
-            <button className="btn btn-lg btn-danger">Schedule Now!</button>
+            <button className="btn btn-lg btn-danger">BOOK IT</button>
           </Link>
         </div>
+      </div>
+      <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+        <ReviewForm />
+        <ReviewList />
       </div>
     </div>
   );
