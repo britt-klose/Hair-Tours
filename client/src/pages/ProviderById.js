@@ -2,9 +2,10 @@
 import { Link } from "react-router-dom";
 // import { ADD_PROVIDER } from "../utils/mutations";
 // import { QUERY_PROVIDERS } from "../utils/queries";
+import ReviewList from "../components/ReviewList";
+import ReviewForm from "../components/ReviewForm";
 
-
-const Provider = () => {
+const ProviderbyId = () => {
   //   let { id } = useParams();
 
   //   const { data } = useQuery(QUERY_PROVIDERS, {
@@ -24,9 +25,11 @@ const Provider = () => {
   //   };
 
   return (
-    <div>
-      <div className="card-header bg-dark text-center">
+    <div style={{ width: "80%", height: "100%", background: "white" }}>
+      <div>
         <h1>Provider Name</h1>
+        <h3>Location:</h3>
+        <h3>Phone:</h3>
       </div>
       <div className="card-body text-center mt-3">
         <div name="services">
@@ -40,24 +43,19 @@ const Provider = () => {
              );
            })} */}
         </div>
-        <button
-          className="btn btn-info"
-          //   onClick={() => handleServices()}
-        ></button>{" "}
         <div className="card-footer text-center m-3">
           <br></br>
-          <Link to="/">
-            <button className="btn btn-lg btn-danger">
-              View all Providers
-            </button>
+          <Link to="/calendar">
+            <button className="btn btn-lg btn-danger">BOOK IT</button>
           </Link>
         </div>
+      </div>
+      <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+        <ReviewForm />
+        <ReviewList />
       </div>
     </div>
   );
 };
 
-export default Provider;
-
-//stylist profile page
-//instagram style (profile picture, bio, calender for booking )
+export default ProviderbyId;

@@ -4,10 +4,11 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Providers from "./pages/Providers";
-import ProvidersById from "./pages/ProviderById";
+import ProviderById from "./pages/ProviderById";
 import Checkout from "./pages/checkout/Checkout";
 import NotFound from "./pages/NotFound";
 import Header from "./components/header";
+import Footer from "./components/footer";
 import Calendar from "./pages/Calendar";
 
 const client = new ApolloClient({
@@ -26,7 +27,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
               <Route path="/providers" element={<Providers />} />
-              <Route path="/providers/:id" element={<ProvidersById />} />
+              <Route path="/providers/1" element={<ProviderById />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="*" element={<NotFound />} />
               <Route path="/calendar" element={<Calendar />} />
@@ -34,6 +35,7 @@ function App() {
           </div>
         </Router>
       </ApolloProvider>
+      <Footer />
     </div>
   );
 }
