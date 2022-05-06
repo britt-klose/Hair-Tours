@@ -57,8 +57,9 @@ const resolvers = {
     //       stylist,
     //       service,
     //       scheduledFor,
-
+          
     //     });
+
 
     //     await User.findOneAndUpdate(
     //       { _id: context.user._id },
@@ -69,27 +70,27 @@ const resolvers = {
     //   }
     //   throw new AuthenticationError("You need to be logged in to book an appointment");
     // },
-    addReview: async (parent, { userId, description, rating }) => {
+    addReview: async(parent, {userId, description, rating}) =>{
       return User.findOneAndUpdate(
-        { _id: userId },
-        {
-          $addToSet: {
-            reviews: { description, reviewAuthor, rating },
-          },
-        },
-        { new: true, runvalidators: true }
-      );
-    },
-    updateUser: async (parent, { input }, context) => {
-      if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { user: input } },
-          { new: true, runValidators: true }
+          {_id: userId},
+          {$addToSet:{
+            reviews: {description, reviewAuthor, rating}
+          },},
+          {new: true,
+          runvalidators: true,}
         );
-        return updatedUser;
-      }
-      throw new AuthenticationError("You need to be logged in!");
+      
+      },
+     updateUser: async (parent, {input}, context)=>{
+        if (context.user){
+          const updatedUser =await User.findOneAndUpdate(
+            {_id: context.user._id},
+            {$addToSet: {user: input}}, 
+            { new: true, runValidators: true }
+          );
+          return updatedUser;
+        }
+        throw new AuthenticationError("You need to be logged in!");
     },
     // addService: async (parent, {userId, serviceName, price}, context) => {
     //   if (context.user){
@@ -111,6 +112,7 @@ const resolvers = {
     //       {_id: userId},
     //       {$pull: {services:{
     //         _id: serviceId,
+
     //         serviceName,
     //         price,
     //         },

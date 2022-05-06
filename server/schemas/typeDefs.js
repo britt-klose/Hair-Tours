@@ -14,6 +14,7 @@ const typeDefs = gql`
     serviceName: String
     price: Int
   }
+
   input UpdateStylistInput {
     username: String
     email: String
@@ -29,24 +30,35 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     services(username: String): [Services]
-    reviews(username: String): [Review]
+    reviews (username: String): [Review]
     me: User
   }
-  type Auth {
+
+  type Auth{
     token: ID!
     user: User
   }
   type Mutation {
-    addReview(
-      userId: ID!
-      reviewAuthor: String!
-      description: String!
-      createdAt: String!
-    ): User
+    addReview(userId: ID!, reviewAuthor: String!, description: String!, createdAt: String!): User
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    updateUser(id: ID!, input: UpdateStylistInput): Auth
+    updateUser(id: ID!, input:UpdateStylistInput): Auth
   }
 `;
 
 module.exports = typeDefs;
+
+// type Appointment{
+//   apptId: String
+//   client: String
+//   stylist: String
+//   service: String
+//   scheduledFor: String
+// }
+
+// input ApptInput{
+//   client: String
+//   stylist: String
+//   service: String
+//   scheduledFor: String
+// }

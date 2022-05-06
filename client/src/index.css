@@ -885,6 +885,10 @@ a:hover {
   text-align: right !important;
 }
 
+.text-left {
+  text-align: left !important;
+}
+
 .text-primary {
   color: #2d3e50 !important;
 }

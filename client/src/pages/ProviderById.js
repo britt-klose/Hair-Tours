@@ -27,7 +27,7 @@ const ProviderbyId = () => {
   return (
     <div style={{ width: "80%", height: "100%", background: "white" }}>
       <div>
-        <h1>Provider Name</h1>
+        <h1>Stylist Name</h1>
         <h3>Location:</h3>
         <h3>Phone:</h3>
       </div>
