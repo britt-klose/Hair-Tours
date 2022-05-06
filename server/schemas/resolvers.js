@@ -1,11 +1,13 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User }= require('../models');
-const { signToken } = require('../utils/auth');
+const { User } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('services').populate('reviews');
+      return User.findOne({ username })
+        .populate("services")
+        .populate("reviews");
     },
     // savedAppts: async (parent, { username }) => {
     //   const params = username ? { username } : {};
@@ -13,7 +15,9 @@ const resolvers = {
     // },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('services').populate('reviews');
+        return User.findOne({ _id: context.user._id })
+          .populate("services")
+          .populate("reviews");
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -55,6 +59,7 @@ const resolvers = {
     //       scheduledFor,
           
     //     });
+
 
     //     await User.findOneAndUpdate(
     //       { _id: context.user._id },
@@ -106,7 +111,8 @@ const resolvers = {
     //     return User.findOneAndUpdate(
     //       {_id: userId},
     //       {$pull: {services:{
-    //         _id: serviceId, 
+    //         _id: serviceId,
+
     //         serviceName,
     //         price,
     //         },
