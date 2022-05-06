@@ -25,8 +25,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<Services />} />
-              <Route path="/providers" element={<Providers />} />
-              <Route path="/providers/1" element={<ProviderById />} />
+              <Route path="/stylists" element={<Providers />} />
+              <Route path="/stylists/:userId" element={<ProviderById />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
