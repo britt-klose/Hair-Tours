@@ -19,7 +19,7 @@ const reviewSchema = new Schema({
     get: (timestamp) => dateFormat(timestamp),
   },
   rating: {
-    type: Int,
+    type: Number,
     default: 0,
   },
 });

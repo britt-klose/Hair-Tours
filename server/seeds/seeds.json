@@ -1,0 +1,54 @@
+[
+  {
+    "username": "Steve Bour",
+    "email": "bourpower@gmail.com",
+    "password": "123456789",
+    "reviews": [
+      {
+        "reviewAuthor": "Sam",
+        "description": "A hot shave so close I'll never grow facial hair again!",
+        "rating": 5
+      }
+    ],
+    "services": []
+  },
+  {
+    "username": "Razor Ramona",
+    "email": "interstate685@yahoo.com",
+    "password": "123456789",
+    "reviews": [
+      {
+        "reviewAuthor": "Brittany",
+        "description": "She went crazy and cut off all of my hair! But I look good. ",
+        "rating": 2
+      }
+    ],
+    "services": []
+  },
+  {
+    "username": "Swan Ronson",
+    "email": "swanoldronson@gmail.com",
+    "password": "123456789",
+    "reviews": [
+      {
+        "reviewAuthor": "Liz",
+        "description": "Gave me the 4th best perm of my life",
+        "rating": 3
+      }
+    ],
+    "services": []
+  },
+  {
+    "username": "Roy G Biv",
+    "email": "roygbiv0737@gmail.com",
+    "password": "123456789",
+    "reviews": [
+      {
+        "reviewAuthor": "Steve",
+        "description": "He bleached my hair and gave me tiger stripes. I came in for a trim.",
+        "rating": 1
+      }
+    ],
+    "services": []
+  }
+]

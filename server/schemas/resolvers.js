@@ -1,19 +1,23 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User }= require('../models');
-const { signToken } = require('../utils/auth');
+const { User } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('savedAppts').populate('services').populate('reviews');
+      return User.findOne({ username })
+        .populate("services")
+        .populate("reviews");
     },
-    savedAppts: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Appointment.find(params).sort({ createdAt: -1 });
-    },
+    // savedAppts: async (parent, { username }) => {
+    //   const params = username ? { username } : {};
+    //   return Appointment.find(params).sort({ createdAt: -1 });
+    // },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("savedAppts").populate('offeredServices').populate('reviews');
+        return User.findOne({ _id: context.user._id })
+          .populate("services")
+          .populate("reviews");
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -41,74 +45,82 @@ const resolvers = {
 
       return { token, user };
     },
-    saveAppt: async (
-      parent,
-      { apptId, client, stylist, service, scheduledFor },
-      context
-    ) => {
-      if (context.user) {
-        const appointment = await Appointment.create({
-          apptId,
-          client,
-          stylist,
-          service,
-          scheduledFor,
-          
-        });
+    // saveAppt: async (
+    //   parent,
+    //   { apptId, client, stylist, service, scheduledFor },
+    //   context
+    // ) => {
+    //   if (context.user) {
+    //     const appointment = await Appointment.create({
+    //       apptId,
+    //       client,
+    //       stylist,
+    //       service,
+    //       scheduledFor,
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { savedAppt: appointment._id } },
-          {new: true, runvalidators: true}
-        );
-        return appointment;
-      }
-      throw new AuthenticationError("You need to be logged in to book an appointment");
-    },
-    addReview: async(parent, {userId, description, rating}) =>{
-      return User.findOneAndUpdate(
-          {_id: userId},
-          {$addToSet:{
-            reviews: {description, reviewAuthor, rating}
-          },},
-          {new: true,
-          runvalidators: true,}
-        );
-      
-      },
-    // updateUser: async(parent, {})=>{
+    //     });
 
+    //     await User.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       { $addToSet: { savedAppt: appointment._id } },
+    //       {new: true, runvalidators: true}
+    //     );
+    //     return appointment;
+    //   }
+    //   throw new AuthenticationError("You need to be logged in to book an appointment");
     // },
-    addService: async (parent, {userId, serviceName, price}, context) => {
-      if (context.user){
-        return User.findOneAndUpdate(
-          {_id: userId},
-          {$addToSet:{
-            services: {serviceName, price}
-          },},
-          {new: true,
-          runvalidators: true,}
-        );
-      }
-      throw new AuthenticationError('Sytlists must be logged in to update services.');
-    },
-
-    removeService: async (parent, {userId, serviceId}, context) =>{
-      if (context.user){
-        return User.findOneAndUpdate(
-          {_id: userId},
-          {$pull: {services:{
-            _id: serviceId, 
-            serviceName,
-            price,
-            },
+    addReview: async (parent, { userId, description, rating }) => {
+      return User.findOneAndUpdate(
+        { _id: userId },
+        {
+          $addToSet: {
+            reviews: { description, reviewAuthor, rating },
           },
         },
-        {new: true}
+        { new: true, runvalidators: true }
       );
-      }
-      throw new AuthenticationError('Sytlists must be logged in to update services.');
     },
+    updateUser: async (parent, { input }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { user: input } },
+          { new: true, runValidators: true }
+        );
+        return updatedUser;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    // addService: async (parent, {userId, serviceName, price}, context) => {
+    //   if (context.user){
+    //     return User.findOneAndUpdate(
+    //       {_id: userId},
+    //       {$addToSet:{
+    //         services: {serviceName, price}
+    //       },},
+    //       {new: true,
+    //       runvalidators: true,}
+    //     );
+    //   }
+    //   throw new AuthenticationError('Sytlists must be logged in to update services.');
+    // },
+
+    // removeService: async (parent, {userId, serviceId}, context) =>{
+    //   if (context.user){
+    //     return User.findOneAndUpdate(
+    //       {_id: userId},
+    //       {$pull: {services:{
+    //         _id: serviceId,
+    //         serviceName,
+    //         price,
+    //         },
+    //       },
+    //     },
+    //     {new: true}
+    //   );
+    //   }
+    //   throw new AuthenticationError('Sytlists must be logged in to update services.');
+    // },
   },
 };
 
