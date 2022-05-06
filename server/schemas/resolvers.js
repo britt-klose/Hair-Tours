@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User } = require("../models");
+const { User, Services } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -8,6 +8,12 @@ const resolvers = {
       return User.findOne({ username })
         .populate("services")
         .populate("reviews");
+    },
+    users: async () => {
+      return User.find().populate();
+    },
+    services: async () => {
+      return Services.find().populate();
     },
     // savedAppts: async (parent, { username }) => {
     //   const params = username ? { username } : {};

@@ -14,7 +14,6 @@ const typeDefs = gql`
     serviceName: String
     price: Int
   }
-
   input UpdateStylistInput {
     username: String
     email: String
