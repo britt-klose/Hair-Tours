@@ -16,7 +16,7 @@ export default function CarouselComponent() {
           <img alt="Stylist" src="Stylist.jpg" />
         </div>
         <div>
-          <img alt="Barber" src="Barber.jpg" />
+          <img alt="Barber" src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
         </div>
       </Carousel>
     </div>
