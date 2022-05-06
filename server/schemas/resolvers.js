@@ -4,13 +4,13 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    user: async (parent, { username }) => {
-      return User.findOne({ username })
+    user: async (parent, { userId }) => {
+      return User.findOne({ _id: userId })
         .populate("services")
         .populate("reviews");
     },
     users: async () => {
-      return User.find().populate();
+      return User.find();
     },
     services: async () => {
       return Services.find().populate();
@@ -63,9 +63,8 @@ const resolvers = {
     //       stylist,
     //       service,
     //       scheduledFor,
-          
-    //     });
 
+    //     });
 
     //     await User.findOneAndUpdate(
     //       { _id: context.user._id },
@@ -76,27 +75,27 @@ const resolvers = {
     //   }
     //   throw new AuthenticationError("You need to be logged in to book an appointment");
     // },
-    addReview: async(parent, {userId, description, rating}) =>{
+    addReview: async (parent, { userId, description, rating }) => {
       return User.findOneAndUpdate(
-          {_id: userId},
-          {$addToSet:{
-            reviews: {description, reviewAuthor, rating}
-          },},
-          {new: true,
-          runvalidators: true,}
+        { _id: userId },
+        {
+          $addToSet: {
+            reviews: { description, reviewAuthor, rating },
+          },
+        },
+        { new: true, runvalidators: true }
+      );
+    },
+    updateUser: async (parent, { input }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { user: input } },
+          { new: true, runValidators: true }
         );
-      
-      },
-     updateUser: async (parent, {input}, context)=>{
-        if (context.user){
-          const updatedUser =await User.findOneAndUpdate(
-            {_id: context.user._id},
-            {$addToSet: {user: input}}, 
-            { new: true, runValidators: true }
-          );
-          return updatedUser;
-        }
-        throw new AuthenticationError("You need to be logged in!");
+        return updatedUser;
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
     // addService: async (parent, {userId, serviceName, price}, context) => {
     //   if (context.user){

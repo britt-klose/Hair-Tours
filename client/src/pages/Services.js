@@ -1,10 +1,10 @@
 import { useState } from "react";
-import ButtonBase from "../components/selectService";
+import ButtonBases from "../components/selectService";
 
 import { useNavigate, Link } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
 import { QUERY_SERVICES } from "../utils/queries";
-// import { SAVE_SERVICES } from "../utils/mutations";
+import { UPDATE_USER } from "../utils/mutations";
 
 //to do: six image buttons for the services check button style
 
@@ -16,9 +16,7 @@ const Services = () => {
   const [formData, setFormData] = useState({});
   let navigate = useNavigate();
 
-  const [saveServices] =
-    useMutation();
-    // SAVE_SERVICES
+  const [saveServices] = useMutation(UPDATE_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -49,8 +47,8 @@ const Services = () => {
       <div className="card-body m-5">
         <form onSubmit={handleFormSubmit}>
           <label>Services </label>
-          <ButtonBase onClick={handleInputChange} value={servicesList} />
-          <Link to="/providers">
+          <ButtonBases onClick={handleInputChange} value={servicesList} />
+          <Link to="/stylists">
             <button className="btn btn-lg btn-danger">Find a Provider</button>
           </Link>
         </form>
