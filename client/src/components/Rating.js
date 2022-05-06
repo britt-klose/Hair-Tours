@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
-import Typography from "@mui/material/Typography";
 
 export default function Ratings() {
   const [value, setValue] = React.useState(2);
@@ -9,11 +8,11 @@ export default function Ratings() {
   return (
     <Box
       sx={{
-        "& > legend": { mt: 2 },
+        "& > legend": { mt: 3 },
       }}
     >
-      <Typography component="legend">Controlled</Typography>
       <Rating
+        className="justify-flex-start align-content-start"
         name="simple-controlled"
         value={value}
         onChange={(event, newValue) => {
