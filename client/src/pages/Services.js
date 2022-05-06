@@ -4,7 +4,7 @@ import ButtonBase from "../components/selectService";
 import { useNavigate, Link } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
 import { QUERY_SERVICES } from "../utils/queries";
-import { SAVE_SERVICES } from "../utils/mutations";
+// import { SAVE_SERVICES } from "../utils/mutations";
 
 //to do: six image buttons for the services check button style
 
@@ -16,7 +16,9 @@ const Services = () => {
   const [formData, setFormData] = useState({});
   let navigate = useNavigate();
 
-  const [saveServices] = useMutation(SAVE_SERVICES);
+  const [saveServices] =
+    useMutation();
+    // SAVE_SERVICES
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
