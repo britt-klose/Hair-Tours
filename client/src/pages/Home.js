@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 
-//To do: change menu (about us, services, providers, profile, log in)
+
 //To do: change images to simple backgrounds (products things)
 //To do: footer 
 //more intuitive
