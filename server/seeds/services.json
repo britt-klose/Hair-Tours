@@ -1,0 +1,26 @@
+[
+    {
+        "serviceName":"Hair Cut",
+        "price": 20
+    },
+    {
+        "serviceName":"Waxing",
+        "price": 35
+    },
+    {
+        "serviceName":"Coloring",
+        "price": 25
+    },
+    {
+        "serviceName":"Styling",
+        "price": 50
+    },
+    {
+        "serviceName":"Beard Trim",
+        "price": 30
+    },
+    {
+        "serviceName":"Hot Shave",
+        "price": 50
+    }
+]

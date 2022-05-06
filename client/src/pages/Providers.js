@@ -2,7 +2,7 @@ import { useQuery, useMutation } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { ADD_PROVIDER } from "../utils/mutations";
 import { QUERY_PROVIDERS } from "../utils/queries";
-import Provider from "../components/Provider";
+import StylistList from "../components/providerList";
 
 const Providers = () => {
   let { id } = useParams();
@@ -44,7 +44,7 @@ const Providers = () => {
         </div>
         <div className="card-footer text-center m-3">
           <br></br>
-          <Provider />
+          <StylistList />
         </div>
       </div>
     </div>
