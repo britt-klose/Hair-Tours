@@ -1,12 +1,12 @@
 import { useState } from "react";
-import ServicesChecklist from "../components/servicesChecklist";
+import ButtonBase from "../components/selectService";
 
 import { useNavigate, Link } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
 import { QUERY_SERVICES } from "../utils/queries";
 import { SAVE_SERVICES } from "../utils/mutations";
 
-//to do: six image buttons for the services check button style 
+//to do: six image buttons for the services check button style
 
 const Services = () => {
   const { data } = useQuery(QUERY_SERVICES);
@@ -47,7 +47,7 @@ const Services = () => {
       <div className="card-body m-5">
         <form onSubmit={handleFormSubmit}>
           <label>Services </label>
-          <ServicesChecklist onClick={handleInputChange} value={servicesList} />
+          <ButtonBase onClick={handleInputChange} value={servicesList} />
           <Link to="/providers">
             <button className="btn btn-lg btn-danger">Find a Provider</button>
           </Link>

@@ -9,7 +9,6 @@ import Checkout from "./pages/checkout/Checkout";
 import NotFound from "./pages/NotFound";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import Calendar from "./pages/Calendar";
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -30,7 +29,6 @@ function App() {
               <Route path="/providers/1" element={<ProviderById />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="*" element={<NotFound />} />
-              <Route path="/calendar" element={<Calendar />} />
             </Routes>
           </div>
         </Router>
