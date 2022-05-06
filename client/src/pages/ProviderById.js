@@ -1,9 +1,10 @@
 // import { useQuery, useMutation } from "@apollo/client";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import { ADD_PROVIDER } from "../utils/mutations";
 // import { QUERY_PROVIDERS } from "../utils/queries";
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
+import Calendar from "./Calendar";
 
 const ProviderbyId = () => {
   //   let { id } = useParams();
@@ -45,9 +46,9 @@ const ProviderbyId = () => {
         </div>
         <div className="card-footer text-center m-3">
           <br></br>
-          <Link to="/calendar">
+          <Calendar>
             <button className="btn btn-lg btn-danger">BOOK IT</button>
-          </Link>
+          </Calendar>
         </div>
       </div>
       <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>
