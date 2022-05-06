@@ -18,7 +18,7 @@ const typeDefs = gql`
   input UpdateStylistInput {
     username: String
     email: String
-    services: [Services]
+    services: [String]
   }
   type Review {
     reviewId: String
