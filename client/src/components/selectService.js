@@ -7,32 +7,32 @@ import Typography from "@mui/material/Typography";
 // add checkbox feature
 const images = [
   {
-    url: "#",
+    url: "https://images.pexels.com/photos/3993447/pexels-photo-3993447.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Hair cut",
     width: "30%",
   },
   {
-    url: "#",
+    url: "https://images.pexels.com/photos/7389074/pexels-photo-7389074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Coloring",
     width: "30%",
   },
   {
-    url: "#",
+    url: "https://images.pexels.com/photos/3993467/pexels-photo-3993467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Styling",
     width: "30%",
   },
   {
-    url: "#",
+    url: "https://images.pexels.com/photos/1319459/pexels-photo-1319459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Hot Shave",
     width: "30%",
   },
   {
-    url: "#",
+    url: "https://images.pexels.com/photos/7919425/pexels-photo-7919425.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     title: "Beard Trim",
     width: "30%",
   },
   {
-    url: "#",
+    url: "https://images.unsplash.com/photo-1618322796571-94a011748223?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=408&q=80",
     title: "Wax",
     width: "30%",
   },
@@ -44,6 +44,7 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     width: "100% !important", // Overrides inline-style
     height: 100,
+    
   },
   "&:hover, &.Mui-focusVisible": {
     zIndex: 1,

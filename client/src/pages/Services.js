@@ -38,22 +38,31 @@ const Services = () => {
       console.error(err);
     }
   };
+   
 
   return (
-    <div className="card bg-white card-rounded w-25">
-      <div className="card-header bg-dark text-center">
+     <div className="container fluid"> 
+  
+      <div className="container-body m-5">
         <h1>Let's Find the Best Service for You!</h1>
       </div>
-      <div className="card-body m-5">
+      <div className="container-body m-5">
         <form onSubmit={handleFormSubmit}>
-          <label>Services </label>
+          <h2>Pick one </h2>
+    
+      <div>
           <ButtonBases onClick={handleInputChange} value={servicesList} />
           <Link to="/stylists">
-            <button className="btn btn-lg btn-danger">Find a Provider</button>
+            
+            <button className="btn btn-lg btn-danger ">Find a Provider</button>
           </Link>
+          </div>
         </form>
-      </div>
+       
     </div>
+    </div>
+    
+  
   );
 };
 
