@@ -48,7 +48,7 @@ const Services = () => {
         <form onSubmit={handleFormSubmit}>
           <label>Services </label>
           <ButtonBases onClick={handleInputChange} value={servicesList} />
-          <Link to="/stylists">
+          <Link to="/checkout">
             <button className="btn btn-lg btn-danger">Find a Provider</button>
           </Link>
         </form>
