@@ -3,6 +3,7 @@
     "username": "Steve Bour",
     "email": "bourpower@gmail.com",
     "password": "123456789",
+    "profilePhoto":"/steve.png",
     "reviews": [
       {
         "reviewAuthor": "Sam",
@@ -16,6 +17,7 @@
     "username": "Razor Ramona",
     "email": "interstate685@yahoo.com",
     "password": "123456789",
+    "profilePhoto":"/ramona.png",
     "reviews": [
       {
         "reviewAuthor": "Brittany",
@@ -29,6 +31,7 @@
     "username": "Swan Ronson",
     "email": "swanoldronson@gmail.com",
     "password": "123456789",
+    "profilePhoto":"/swan.png",
     "reviews": [
       {
         "reviewAuthor": "Liz",
@@ -42,6 +45,7 @@
     "username": "Roy G Biv",
     "email": "roygbiv0737@gmail.com",
     "password": "123456789",
+    "profilePhoto":"/roy.png",
     "reviews": [
       {
         "reviewAuthor": "Steve",

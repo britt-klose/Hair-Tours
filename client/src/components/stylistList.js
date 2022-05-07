@@ -11,13 +11,14 @@ import { Link } from "react-router-dom";
 const StylistList = ({ users }) => {
   return (
     <div>
+
       {users &&
         users.map((user) => (
           <div key={user._id}>
-            <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+            <List sx={{ width: "100%",lenght:"100%" ,bgcolor: "background.paper" }}>
               <ListItem alignItems="flex-start">
                 <ListItemAvatar>
-                  <Avatar alt="Remy Sharp" src="{user.profilePhoto}" />
+                  <Avatar alt="Remy Sharp" src='/ramona.png' />
                 </ListItemAvatar> 
                 
                 <ListItemText
@@ -29,7 +30,8 @@ const StylistList = ({ users }) => {
                         component="span"
                         variant="body2"
                         color="text.primary"
-                      ></Typography>
+                
+                      > Hi there!</Typography>
                       {user.services}
                     </React.Fragment>
                   }
