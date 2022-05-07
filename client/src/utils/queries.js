@@ -9,6 +9,16 @@ export const QUERY_SERVICES = gql`
     }
   }
 `;
+
+export const QUERY_ME = gql`
+  query me {
+    user {
+      username
+      email
+    }
+  }
+`;
+
 export const QUERY_STYLISTS = gql`
   query users {
     users {
