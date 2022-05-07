@@ -38,8 +38,7 @@ const Services = () => {
       console.error(err);
     }
   };
-    // card bg-white card-rounded w-70
-    //className="container-header bg-dark text-center"
+   
 
   return (
      <div className="container fluid"> 
@@ -50,28 +49,19 @@ const Services = () => {
       <div className="container-body m-5">
         <form onSubmit={handleFormSubmit}>
           <h2>Pick one </h2>
-          <div>
+    
+      <div>
           <ButtonBases onClick={handleInputChange} value={servicesList} />
           <Link to="/stylists">
             
-            <button className="btn btn-lg btn-danger">Find a Provider</button>
+            <button className="btn btn-lg btn-danger ">Find a Provider</button>
           </Link>
           </div>
         </form>
-      </div>
+       
     </div>
-    <div className="container-body m-5">
-      <form onSubmit={handleFormSubmit}>
-        <h2>Pick one </h2>
-        
-        <ButtonBases onClick={handleInputChange} value={servicesList} />
-        <Link to="/stylists">
-          
-          <button className="btn btn-lg btn-danger">Find a Provider</button>
-        </Link>
-        
-      </form>
     </div>
+    
   
   );
 };
