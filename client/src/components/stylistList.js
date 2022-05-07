@@ -15,7 +15,7 @@ const StylistList = ({ users }) => {
       {users &&
         users.map((user) => (
           <div key={user._id}>
-            <List sx={{ width: "100%",lenght:"100%" ,bgcolor: "background.paper" }}>
+            <List sx={{ width: "100%",bgcolor: "background.paper" }}>
               <ListItem alignItems="flex-start">
                 <ListItemAvatar>
                   <Avatar alt="Remy Sharp" src='/ramona.png' />
