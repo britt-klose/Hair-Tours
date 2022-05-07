@@ -7,6 +7,8 @@ export const LOGIN = gql`
       user {
         _id
         username
+        email
+        password
       }
     }
   }
@@ -19,6 +21,8 @@ export const ADD_PROVIDER = gql`
       user {
         _id
         username
+        email
+        password
       }
     }
   }
@@ -35,8 +39,9 @@ export const ADD_REVIEW = gql`
 `;
 
 export const UPDATE_USER = gql`
-  mutation updateUser($user: updatedUserInput!) {
+  mutation updateUser($user: updateUserInput!) {
     updateUser(user: $user) {
+      token
       username
       email
       services {
