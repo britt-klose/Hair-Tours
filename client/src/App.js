@@ -6,6 +6,7 @@ import Services from "./pages/Services";
 import Providers from "./pages/Providers";
 import ProviderById from "./pages/ProviderById";
 import Checkout from "./pages/checkout/Checkout";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import Header from "./components/header";
 import Footer from "./components/footer";
@@ -28,6 +29,7 @@ function App() {
               <Route path="/stylists" element={<Providers />} />
               <Route path="/stylists/:userId" element={<ProviderById />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
