@@ -30,7 +30,7 @@ const StylistList = ({ users }) => {
                         variant="body2"
                         color="text.primary"
                       ></Typography>
-                      {user.services}
+                      {/* {user.services} */}
                     </React.Fragment>
                   }
                 />

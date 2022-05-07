@@ -3,8 +3,8 @@ import { gql } from "@apollo/client";
 export const QUERY_SERVICES = gql`
   query services {
     services {
-      _id
-      name
+      serviceId
+      serviceName
       price
     }
   }
@@ -21,6 +21,7 @@ export const QUERY_STYLISTS = gql`
         reviewAuthor
       }
       services {
+        serviceId
         serviceName
         price
       }
@@ -39,6 +40,7 @@ export const QUERY_SINGLE_STYLIST = gql`
         reviewAuthor
       }
       services {
+        serviceId
         serviceName
         price
       }

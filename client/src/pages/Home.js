@@ -6,9 +6,8 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 
-
 //To do: change images to simple backgrounds (products things)
-//To do: footer 
+//To do: footer
 //more intuitive
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -41,7 +40,7 @@ const Home = () => {
         <div className="text-center m-3">
           <h1 style={{ marginBottom: 30 }}>Welcome to Hair Tours!</h1>
           <h2>Ready to Get Styled?</h2>
-          <Link to="/services">
+          <Link to="/stylists">
             <button className="btn btn-lg btn-danger">
               Find a Service Provider!
             </button>
