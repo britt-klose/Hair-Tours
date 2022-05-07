@@ -983,7 +983,7 @@ a:hover {
   text-align: center;
   display: inline-block;
   padding: 0.5rem 1.2rem;
-  margin: 0;
+  margin: 7px;
   text-decoration: none;
   font-size: 1vh;
   border-radius: 0.3rem;
@@ -1003,8 +1003,8 @@ a:hover {
 }
 
 .btn.btn-sm {
-  font-size: 0.85vh;
-  padding: 0.3rem 0.9rem;
+  font-size: 0.85rem;
+  padding: 0.8rem 2.4rem;
 }
 
 .btn.btn-lg {

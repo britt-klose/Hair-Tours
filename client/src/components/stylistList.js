@@ -2,8 +2,8 @@ import * as React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-// import ListItemAvatar from "@mui/material/ListItemAvatar";
-// import Avatar from "@mui/material/Avatar";
+ import ListItemAvatar from "@mui/material/ListItemAvatar";
+import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
@@ -16,10 +16,10 @@ const StylistList = ({ users }) => {
           <div key={user._id}>
             <List sx={{ width: "100%", bgcolor: "background.paper" }}>
               <ListItem alignItems="flex-start">
-                {/* <ListItemAvatar>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                </ListItemAvatar> */}
-
+                <ListItemAvatar>
+                  <Avatar alt="Remy Sharp" src="{user.profilePhoto}" />
+                </ListItemAvatar> 
+                
                 <ListItemText
                   primary={user.username}
                   secondary={
@@ -30,7 +30,7 @@ const StylistList = ({ users }) => {
                         variant="body2"
                         color="text.primary"
                       ></Typography>
-                      {/* {user.services} */}
+                      {user.services}
                     </React.Fragment>
                   }
                 />
