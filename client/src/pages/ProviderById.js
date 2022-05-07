@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { QUERY_SINGLE_STYLIST } from "../utils/queries";
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
-import Calendar from "./Calendar";
+import { PopupWidget } from "react-calendly";
 
 const ProviderbyId = () => {
   let { userId } = useParams();
@@ -13,7 +13,7 @@ const ProviderbyId = () => {
   });
 
   const user = data?.user || [];
-
+  
   return (
     <div style={{ width: "80%", height: "100%", background: "white" }}>
       <div>
@@ -26,9 +26,13 @@ const ProviderbyId = () => {
         <div name="services"></div>
         <div className="card-footer text-center m-3">
           <br></br>
-          <Calendar>
-            <button className="btn btn-lg btn-danger">BOOK IT</button>
-          </Calendar>
+          <PopupWidget
+            url={`https://calendly.com/${user.calId}`}
+            rootElement={document.getElementById("root")}
+            text="Click here to schedule!"
+            textColor="#ffffff"
+            color="#00a2ff"
+          />
         </div>
       </div>
       <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>

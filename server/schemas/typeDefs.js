@@ -6,6 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    calId: String
     services: [Services]
     reviews: [Review]
   }

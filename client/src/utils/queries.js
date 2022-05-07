@@ -25,6 +25,7 @@ export const QUERY_STYLISTS = gql`
       _id
       username
       email
+      calId
       reviews {
         reviewId
         description
@@ -44,6 +45,7 @@ export const QUERY_SINGLE_STYLIST = gql`
       _id
       username
       email
+      calId
       reviews {
         reviewId
         description
