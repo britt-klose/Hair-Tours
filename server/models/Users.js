@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 
 //const apptSchema = require("./Appointment");
 const reviewSchema = require("./Reviews");
-const Services = require('./Services')
+const Services = require("./Services");
 
 const userSchema = new Schema(
   {
@@ -30,8 +30,8 @@ const userSchema = new Schema(
     services: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Services"
-      }
+        ref: "Services",
+      },
     ],
     reviews: [reviewSchema],
   },

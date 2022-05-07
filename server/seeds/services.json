@@ -1,26 +1,32 @@
 [
-    {
-        "serviceName":"Hair Cut",
-        "price": 20
-    },
-    {
-        "serviceName":"Waxing",
-        "price": 35
-    },
-    {
-        "serviceName":"Coloring",
-        "price": 25
-    },
-    {
-        "serviceName":"Styling",
-        "price": 50
-    },
-    {
-        "serviceName":"Beard Trim",
-        "price": 30
-    },
-    {
-        "serviceName":"Hot Shave",
-        "price": 50
-    }
+  {
+    "serviceId": 1,
+    "serviceName": "Hair Cut",
+    "price": 20
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Waxing",
+    "price": 35
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Coloring",
+    "price": 25
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Styling",
+    "price": 50
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Beard Trim",
+    "price": 30
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Hot Shave",
+    "price": 50
+  }
 ]

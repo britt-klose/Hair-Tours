@@ -10,7 +10,8 @@ const typeDefs = gql`
     reviews: [Review]
   }
   type Services {
-    serviceId: String
+    _id: ID
+    serviceId: Int
     serviceName: String
     price: Int
   }
@@ -28,8 +29,8 @@ const typeDefs = gql`
   type Query {
     users: [User]!
     user(userId: ID!): User
-    services(username: String): [Services]
-    reviews(username: String): [Review]
+    services: [Services]
+    reviews(userId: ID!): [Review]
     me: User
   }
 

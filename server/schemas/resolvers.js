@@ -13,7 +13,7 @@ const resolvers = {
       return User.find();
     },
     services: async () => {
-      return Services.find().populate();
+      return Services.find();
     },
     // savedAppts: async (parent, { username }) => {
     //   const params = username ? { username } : {};
