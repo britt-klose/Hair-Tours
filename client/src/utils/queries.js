@@ -3,6 +3,7 @@ import { gql } from "@apollo/client";
 export const QUERY_SERVICES = gql`
   query services {
     services {
+      _id
       serviceId
       serviceName
       price
@@ -15,6 +16,17 @@ export const QUERY_ME = gql`
     user {
       username
       email
+    }
+  }
+`;
+
+export const QUERY_REVIEWS=gql`
+  query getReviews{
+    reviews{
+      reviewId
+      description
+      reviewAuthor
+      createdAt
     }
   }
 `;

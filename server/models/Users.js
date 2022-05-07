@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 
 //const apptSchema = require("./Appointment");
 const reviewSchema = require("./Reviews");
-const Services = require("./Services");
+const Service = require("./Service");
 
 const userSchema = new Schema(
   {
@@ -22,19 +22,22 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    //is callid an id or a link?
+    //made link false for now while testing mutatations in gql
     calId: {
       type: String,
-      required: true
+      required: false
     },
-    // status: {
-    //   type: String,
-    //   required: false,
-    // },
+    
+    image: {
+      type: String,
+      required: false,
+    },
     // savedAppts: [apptSchema],
     services: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Services",
+        ref: "Service",
       },
     ],
     reviews: [reviewSchema],

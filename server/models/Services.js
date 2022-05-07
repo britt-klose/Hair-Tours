@@ -14,6 +14,6 @@ const servicesSchema = new Schema({
   },
 });
 
-const Services = model("Services", servicesSchema);
+const Services = model("Service", servicesSchema);
 
 module.exports = Services;
