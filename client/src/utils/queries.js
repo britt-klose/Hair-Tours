@@ -9,12 +9,23 @@ export const QUERY_SERVICES = gql`
     }
   }
 `;
+
+export const QUERY_ME = gql`
+  query me {
+    user {
+      username
+      email
+    }
+  }
+`;
+
 export const QUERY_STYLISTS = gql`
   query users {
     users {
       _id
       username
       email
+      calId
       reviews {
         reviewId
         description
@@ -34,6 +45,7 @@ export const QUERY_SINGLE_STYLIST = gql`
       _id
       username
       email
+      calId
       reviews {
         reviewId
         description

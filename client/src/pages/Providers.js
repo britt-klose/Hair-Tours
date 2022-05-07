@@ -35,7 +35,7 @@ const Providers = () => {
   return (
 
     <div className="card bg-white card-rounded w-50">
-      <div className="card-header bg-#4900e5 text-center">
+      <div className="card-header text-center">
         <h1>Pick a service provider from the list below:</h1>
       </div>
 

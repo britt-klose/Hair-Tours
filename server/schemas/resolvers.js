@@ -75,7 +75,7 @@ const resolvers = {
     //   }
     //   throw new AuthenticationError("You need to be logged in to book an appointment");
     // },
-    addReview: async (parent, { userId, description, rating }) => {
+    addReview: async (parent, { userId, description, reviewAuthor, rating }) => {
       return User.findOneAndUpdate(
         { _id: userId },
         {
@@ -86,16 +86,21 @@ const resolvers = {
         { new: true, runvalidators: true }
       );
     },
-    updateUser: async (parent, { input }, context) => {
-      if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { user: input } },
+    updateUser: async (parent, {id, username, email, services }) => {
+      // if (context.user) {
+      const updateUser = await 
+      User.findOneAndUpdate(
+          { _id: id },
+          { $addToSet: { 
+            user: {username, email, services},
+           }, },
           { new: true, runValidators: true }
         );
-        return updatedUser;
-      }
-      throw new AuthenticationError("You need to be logged in!");
+        // const token = signToken(user);
+        // return {token, updateUser};
+        return updateUser;
+      //}
+      //throw new AuthenticationError("You need to be logged in!");
     },
     // addService: async (parent, {userId, serviceName, price}, context) => {
     //   if (context.user){

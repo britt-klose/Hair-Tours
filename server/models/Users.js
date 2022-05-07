@@ -22,6 +22,10 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    calId: {
+      type: String,
+      required: true
+    },
     // status: {
     //   type: String,
     //   required: false,

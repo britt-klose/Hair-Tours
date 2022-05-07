@@ -6,6 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    calId: String
     services: [Services]
     reviews: [Review]
   }
@@ -15,7 +16,7 @@ const typeDefs = gql`
     serviceName: String
     price: Int
   }
-  input UpdateStylistInput {
+  input UpdateUserInput {
     username: String
     email: String
     services: [String]
@@ -24,7 +25,7 @@ const typeDefs = gql`
     reviewId: String
     reviewAuthor: String
     description: String
-    createdAt: String
+    rating: Int
   }
   type Query {
     users: [User]!
@@ -43,11 +44,11 @@ const typeDefs = gql`
       userId: ID!
       reviewAuthor: String!
       description: String!
-      createdAt: String!
+      rating: Int!
     ): User
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    updateUser(id: ID!, input: UpdateStylistInput): Auth
+    updateUser(id: ID!, input: UpdateUserInput): User
   }
 `;
 

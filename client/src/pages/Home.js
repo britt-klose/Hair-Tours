@@ -20,23 +20,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const Home = () => {
   return (
     <div>
-      <div
-        className="card bg-white card-rounded text-center"
-        style={{
-          position: "absolute",
-          marginLeft: "25%",
-          marginTop: "10%",
-          display: "flex",
-          height: "30%",
-          width: "50%",
-          boxShadow: "0 0 3px 2px #cec7c759",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: 20,
-          borderRadius: 20,
-          zIndex: 1,
-        }}
-      >
+      <div className="card bg-white card-rounded text-center" id="home">
         <div className="text-center m-3">
           <h1 style={{ marginBottom: 30 }}>Welcome to Hair Tours!</h1>
           <h2>Ready to Get Styled?</h2>
@@ -66,32 +50,22 @@ const Home = () => {
                 rowSpacing={1}
                 columnSpacing={{ xs: 1, sm: 2, md: 3 }}
               >
-                <Grid item xs={6}>
+                <Grid item sm={6} xs={12}>
                   <Item>
-                    <img
-                      src="1.png"
-                      alt="Step 1"
-                      width={150}
-                      height={150}
-                    ></img>
-                    <h2>Create a Profile</h2>
+                    <img src="1.png" alt="Step 1" id="instructions"></img>
+                    <h2>Stylists - Create a Profile</h2>
                     <ul className="text-center">
                       In the upper right corner, Login or Sign Up
                     </ul>
                     <ul>
                       Select Profile to Change your Details, including Profile
-                      Picture and Name
+                      Picture, Name, Email, and Services Offered
                     </ul>
                   </Item>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item sm={6} xs={12}>
                   <Item>
-                    <img
-                      src="2.png"
-                      alt="Step 2"
-                      width={150}
-                      height={150}
-                    ></img>
+                    <img src="2.png" alt="Step 2" id="instructions"></img>
                     <h2>Select Your Services</h2>
                     <ul>
                       Navigate to the Services Tab and Select the Services you
@@ -103,14 +77,9 @@ const Home = () => {
                     </ul>
                   </Item>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item sm={6} xs={12}>
                   <Item>
-                    <img
-                      src="3.png"
-                      alt="Step 3"
-                      width={150}
-                      height={150}
-                    ></img>
+                    <img src="3.png" alt="Step 3" id="instructions"></img>
                     <h2>Select Your Provider</h2>
                     <ul>
                       After Selecting Services, Browse the list of Providers
@@ -118,14 +87,9 @@ const Home = () => {
                     <ul>Select a Provider to View their Profile and Reviews</ul>
                   </Item>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item sm={6} xs={12}>
                   <Item>
-                    <img
-                      src="4.png"
-                      alt="Step 4"
-                      width={150}
-                      height={150}
-                    ></img>
+                    <img src="4.png" alt="Step 4" id="instructions"></img>
                     <h2>Schedule Your Appointment</h2>
                     <ul>
                       Schedule an Appointment with the Provider by Selecting
