@@ -32,7 +32,7 @@ const StylistList = ({ users }) => {
                         color="text.primary"
                 
                       > Hi there!</Typography>
-                      {user.services}
+                      {/* {user.services} */}
                     </React.Fragment>
                   }
                 />

@@ -1,6 +1,6 @@
 // import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 // import { ADD_PROVIDER } from "../utils/mutations";
 import { QUERY_STYLISTS } from "../utils/queries";
 import StylistList from "../components/stylistList";

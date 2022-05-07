@@ -3,7 +3,7 @@
     "username": "Steve Bour",
     "email": "bourpower@gmail.com",
     "password": "123456789",
-    "profilePhoto":"/steve.png",
+    "profilePhoto": "/steve.png",
     "calId": "bourpower",
     "reviews": [
       {
@@ -12,13 +12,19 @@
         "rating": 5
       }
     ],
-    "services": "6276847c22ddbaf88cf6ea54"
+    "services": [
+      {
+        "serviceId": 6,
+        "serviceName": "Hot Shave",
+        "price": 50
+      }
+    ]
   },
   {
     "username": "Razor Ramona",
     "email": "interstate685@yahoo.com",
     "password": "123456789",
-    "profilePhoto":"/ramona.png",
+    "profilePhoto": "/ramona.png",
     "calId": "razorramona",
     "reviews": [
       {
@@ -27,13 +33,24 @@
         "rating": 2
       }
     ],
-    "services": ["6276847c22ddbaf88cf6ea4f", "6276847c22ddbaf88cf6ea50"]
+    "services": [
+      {
+        "serviceId": 1,
+        "serviceName": "Hair Cut",
+        "price": 20
+      },
+      {
+        "serviceId": 2,
+        "serviceName": "Waxing",
+        "price": 35
+      }
+    ]
   },
   {
     "username": "Swan Ronson",
     "email": "swanoldronson@gmail.com",
     "password": "123456789",
-    "profilePhoto":"/swan.png",
+    "profilePhoto": "/swan.png",
     "calId": "swanoldronson",
     "reviews": [
       {
@@ -42,13 +59,24 @@
         "rating": 3
       }
     ],
-    "services": ["6276847c22ddbaf88cf6ea52", "6276847c22ddbaf88cf6ea53"]
+    "services": [
+      {
+        "serviceId": 4,
+        "serviceName": "Styling",
+        "price": 50
+      },
+      {
+        "serviceId": 5,
+        "serviceName": "Beard Trim",
+        "price": 30
+      }
+    ]
   },
   {
     "username": "Roy G Biv",
     "email": "roygbiv0737@gmail.com",
     "password": "123456789",
-    "profilePhoto":"/roy.png",
+    "profilePhoto": "/roy.png",
     "calId": "roygbiv0737",
     "reviews": [
       {
@@ -57,6 +85,12 @@
         "rating": 1
       }
     ],
-    "services": "6276847c22ddbaf88cf6ea51"
+    "services": [
+      {
+        "serviceId": 3,
+        "serviceName": "Coloring",
+        "price": 25
+      }
+    ]
   }
 ]
