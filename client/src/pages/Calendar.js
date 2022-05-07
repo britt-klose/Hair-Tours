@@ -12,7 +12,7 @@ const Calendar = () => {
     <div>
       <div className="App">
         <PopupWidget
-          url="https://calendly.com/bourpower/hot-shave"
+          url="https://calendly.com/${user.email}/"
           rootElement={document.getElementById("root")}
           text="Click here to schedule!"
           textColor="#ffffff"
@@ -21,7 +21,7 @@ const Calendar = () => {
       </div>
       <div className="App">
         <PopupWidget
-          url="https://calendly.com/razorramona/hair-cut"
+          url="https://calendly.com/razorramona"
           rootElement={document.getElementById("root")}
           text="Click here to schedule!"
           textColor="#ffffff"

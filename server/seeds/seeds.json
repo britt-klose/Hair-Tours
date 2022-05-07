@@ -3,6 +3,7 @@
     "username": "Steve Bour",
     "email": "bourpower@gmail.com",
     "password": "123456789",
+    "calId": "bourpower",
     "reviews": [
       {
         "reviewAuthor": "Sam",
@@ -10,12 +11,13 @@
         "rating": 5
       }
     ],
-    "services": []
+    "services": "6276847c22ddbaf88cf6ea54"
   },
   {
     "username": "Razor Ramona",
     "email": "interstate685@yahoo.com",
     "password": "123456789",
+    "calId": "razorramona",
     "reviews": [
       {
         "reviewAuthor": "Brittany",
@@ -23,12 +25,13 @@
         "rating": 2
       }
     ],
-    "services": []
+    "services": ["6276847c22ddbaf88cf6ea4f", "6276847c22ddbaf88cf6ea50"]
   },
   {
     "username": "Swan Ronson",
     "email": "swanoldronson@gmail.com",
     "password": "123456789",
+    "calId": "swanoldronson",
     "reviews": [
       {
         "reviewAuthor": "Liz",
@@ -36,12 +39,13 @@
         "rating": 3
       }
     ],
-    "services": []
+    "services": ["6276847c22ddbaf88cf6ea52", "6276847c22ddbaf88cf6ea53"]
   },
   {
     "username": "Roy G Biv",
     "email": "roygbiv0737@gmail.com",
     "password": "123456789",
+    "calId": "roygbiv0737",
     "reviews": [
       {
         "reviewAuthor": "Steve",
@@ -49,6 +53,6 @@
         "rating": 1
       }
     ],
-    "services": []
+    "services": "6276847c22ddbaf88cf6ea51"
   }
 ]
