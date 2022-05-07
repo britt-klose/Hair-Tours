@@ -22,14 +22,17 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    //is callid an id or a link?
+    //made link false for now while testing mutatations in gql
     calId: {
       type: String,
-      required: true
+      required: false
     },
-    // status: {
-    //   type: String,
-    //   required: false,
-    // },
+    
+    image: {
+      type: String,
+      required: false,
+    },
     // savedAppts: [apptSchema],
     services: [serviceSchema],
     reviews: [reviewSchema],

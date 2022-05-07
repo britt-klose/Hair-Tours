@@ -7,30 +7,35 @@ const typeDefs = gql`
     email: String
     password: String
     calId: String
+    image: String
     services: [Services]
     reviews: [Review]
   }
-  type Services {
+  type Service {
     _id: ID
     serviceId: Int
     serviceName: String
     price: Int
   }
   input UpdateUserInput {
-    username: String
-    email: String
-    services: [String]
+    filter: UserFilter!
+    set: UserPatch
+    remove: UserPatch
+  }
+  type UpdateUserPayload{
+    user(filter: UserFilter):[User]
   }
   type Review {
     reviewId: String
     reviewAuthor: String
     description: String
     rating: Int
+    createdAt: String
   }
   type Query {
     users: [User]!
     user(userId: ID!): User
-    services: [Services]
+    services:(serviceId: ID!): [Service]
     reviews(userId: ID!): [Review]
     me: User
   }
@@ -48,7 +53,9 @@ const typeDefs = gql`
     ): User
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    updateUser(id: ID!, input: UpdateUserInput): User
+    updateUser(input: UpdateUserInput!): UpdateUserPayload
+    addService(serviceName: String!, price: Int!): Service
+    removeService(serviceId: ID!): Service
   }
 `;
 
