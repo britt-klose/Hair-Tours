@@ -46,14 +46,12 @@ const Services = () => {
       </div>
       <div className="container-body m-5">
         <form onSubmit={handleFormSubmit}>
-          <h2>Pick one </h2>
+          <h2>Choose your Services:</h2>
 
           <div>
             <ButtonBases onClick={handleInputChange} value={servicesList} />
-            <Link to="/stylists">
-              <button className="btn btn-lg btn-danger ">
-                Find a Provider
-              </button>
+            <Link to="/checkout">
+              <button className="btn btn-lg btn-danger ">Checkout</button>
             </Link>
           </div>
         </form>
