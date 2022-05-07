@@ -1,29 +1,13 @@
-import { useQuery, useMutation } from "@apollo/client";
-import { useParams } from "react-router-dom";
-import { ADD_PROVIDER } from "../utils/mutations";
-import { QUERY_PROVIDERS } from "../utils/queries";
+import { useQuery } from "@apollo/client";
+// import { useParams } from "react-router-dom";
+// import { ADD_PROVIDER } from "../utils/mutations";
+import { QUERY_STYLISTS } from "../utils/queries";
 import StylistList from "../components/providerList";
 
 const Providers = () => {
-  let { id } = useParams();
+  const { data } = useQuery(QUERY_STYLISTS);
 
-  const { data } = useQuery(QUERY_PROVIDERS, {
-    variables: { _id: id },
-  });
-
-  const providerServices = data?.services || [];
-
-  const [addProvider] = useMutation(ADD_PROVIDER);
-
-  const handleServices = async (techNum) => {
-    try {
-      await addProvider({
-        variables: { _id: id, services: providerServices },
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  const users = data?.users || [];
 
   return (
     <div className="card bg-white card-rounded w-50">
@@ -32,20 +16,16 @@ const Providers = () => {
       </div>
 
       <div className="card-body text-center mt-3">
-        <div name="services" onChange={handleServices}>
-          {providerServices.map((service) => {
-            return (
-              <div key={service._id} value={service.name}>
-                {service.img}
-                {service.name}
-              </div>
-            );
-          })}
-        </div>
-        <div className="card-footer text-center m-3">
-          <br></br>
-          <StylistList />
-        </div>
+        <StylistList users={users} />
+        {/* {stylists?.length > 0 && <StylistList services={stylist.services} />}
+        {stylists.map((service) => {
+          return (
+            <div key={service.id} value={service.name}>
+              {service.username}
+              {service.name}
+            </div>
+          );
+        })} */}
       </div>
     </div>
   );

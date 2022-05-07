@@ -14,7 +14,6 @@ const typeDefs = gql`
     serviceName: String
     price: Int
   }
-
   input UpdateStylistInput {
     username: String
     email: String
@@ -27,22 +26,27 @@ const typeDefs = gql`
     createdAt: String
   }
   type Query {
-    users: [User]
-    user(username: String!): User
+    users: [User]!
+    user(userId: ID!): User
     services(username: String): [Services]
-    reviews (username: String): [Review]
+    reviews(username: String): [Review]
     me: User
   }
 
-  type Auth{
+  type Auth {
     token: ID!
     user: User
   }
   type Mutation {
-    addReview(userId: ID!, reviewAuthor: String!, description: String!, createdAt: String!): User
+    addReview(
+      userId: ID!
+      reviewAuthor: String!
+      description: String!
+      createdAt: String!
+    ): User
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    updateUser(id: ID!, input:UpdateStylistInput): Auth
+    updateUser(id: ID!, input: UpdateStylistInput): Auth
   }
 `;
 
