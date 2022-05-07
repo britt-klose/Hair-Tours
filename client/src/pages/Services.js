@@ -38,22 +38,41 @@ const Services = () => {
       console.error(err);
     }
   };
+    // card bg-white card-rounded w-70
+    //className="container-header bg-dark text-center"
 
   return (
-    <div className="card bg-white card-rounded w-25">
-      <div className="card-header bg-dark text-center">
+     <div className="container fluid"> 
+  
+      <div className="container-body m-5">
         <h1>Let's Find the Best Service for You!</h1>
       </div>
-      <div className="card-body m-5">
+      <div className="container-body m-5">
         <form onSubmit={handleFormSubmit}>
-          <label>Services </label>
-          <ServicesChecklist onClick={handleInputChange} value={servicesList} />
-          <Link to="/providers">
+          <h2>Pick one </h2>
+          <div>
+          <ButtonBases onClick={handleInputChange} value={servicesList} />
+          <Link to="/stylists">
+            
             <button className="btn btn-lg btn-danger">Find a Provider</button>
           </Link>
+          </div>
         </form>
       </div>
     </div>
+    <div className="container-body m-5">
+      <form onSubmit={handleFormSubmit}>
+        <h2>Pick one </h2>
+        
+        <ButtonBases onClick={handleInputChange} value={servicesList} />
+        <Link to="/stylists">
+          
+          <button className="btn btn-lg btn-danger">Find a Provider</button>
+        </Link>
+        
+      </form>
+    </div>
+  </div>
   );
 };
 
