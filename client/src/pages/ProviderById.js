@@ -22,7 +22,7 @@ const ProviderbyId = () => {
       <div className="flex-row">
         <div className="col-1">
           <Avatar
-            alt="Your Profile Picture"
+            alt="Profile Photo"
             src={user.profilePhoto}
             sx={{ width: 75, height: 75 }}
           />
