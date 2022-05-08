@@ -26,6 +26,10 @@ const userSchema = new Schema(
       type: String,
       required: true
     },
+    profilePhoto: {
+      type: String,
+      require: true
+    },
     // status: {
     //   type: String,
     //   required: false,
