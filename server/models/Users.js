@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 
 //const apptSchema = require("./Appointment");
 const reviewSchema = require("./Reviews");
-const Services = require("./Services");
+const serviceSchema = require("./Services");
 
 const userSchema = new Schema(
   {
@@ -26,17 +26,16 @@ const userSchema = new Schema(
       type: String,
       required: true
     },
+    profilePhoto: {
+      type: String,
+      required: true
+    },
     // status: {
     //   type: String,
     //   required: false,
     // },
     // savedAppts: [apptSchema],
-    services: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Services",
-      },
-    ],
+    services: [serviceSchema],
     reviews: [reviewSchema],
   },
   {

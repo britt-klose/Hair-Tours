@@ -1,6 +1,6 @@
-const { Schema, model } = require("mongoose");
+const { Schema } = require("mongoose");
 
-const servicesSchema = new Schema({
+const serviceSchema = new Schema({
   serviceId: {
     type: Number,
   },
@@ -14,6 +14,6 @@ const servicesSchema = new Schema({
   },
 });
 
-const Services = model("Services", servicesSchema);
+// const Services = model("Services", servicesSchema);
 
-module.exports = Services;
+module.exports = serviceSchema;

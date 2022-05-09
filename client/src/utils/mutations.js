@@ -34,18 +34,31 @@ export const ADD_REVIEW = gql`
       reviewId
       description
       reviewAuthor
+      createdAt
     }
   }
 `;
 
+export const ADD_SERVICE=gql`
+  mutation addService($serviceName: String!, $price: Int!){
+    addService (serviceName: $serviceName, price: $price){
+      serviceId
+      serviceName
+      price
+    }
+  }
+`;
+
+
 export const UPDATE_USER = gql`
   mutation updateUser($user: updateUserInput!) {
     updateUser(user: $user) {
-      token
       username
       email
       services {
+        serviceId
         serviceName
+        price
       }
     }
   }

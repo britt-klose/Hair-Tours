@@ -1,6 +1,6 @@
 // import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
-//import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 // import { ADD_PROVIDER } from "../utils/mutations";
 import { QUERY_STYLISTS } from "../utils/queries";
 import StylistList from "../components/stylistList";
@@ -33,9 +33,9 @@ const Providers = () => {
   // };
 
   return (
-    <div className="container">
-      <div className="card-header bg-dark text-center">
-        <h1>Providers:</h1>
+    <div className="card bg-white card-rounded w-50">
+      <div className="card-header text-center">
+        <h1>Pick a service provider from the list below:</h1>
       </div>
 
       {/* <div className="app__work-filter">
@@ -54,7 +54,7 @@ const Providers = () => {
         )}
       </div>
       {filterStylists.map((work, index) => (*/}
-      <div className="container">
+      <div className="card-body text-center mt-3">
         <StylistList users={users} />
         {/* {stylists?.length > 0 && <StylistList services={stylist.services} />}
         {stylists.map((service) => {
