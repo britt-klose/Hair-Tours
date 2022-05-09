@@ -18,7 +18,7 @@ const StylistList = ({ users }) => {
             <List sx={{ width: "100%",bgcolor: "background.paper" }}>
               <ListItem alignItems="flex-start">
                 <ListItemAvatar>
-                  <Avatar alt="Remy Sharp" src='/ramona.png' />
+                  <Avatar alt="Profile Pic" src={user.profilePhoto} />
                 </ListItemAvatar> 
                 
                 <ListItemText
@@ -32,7 +32,7 @@ const StylistList = ({ users }) => {
                         color="text.primary"
                 
                       > Hi there!</Typography>
-                      {user.services}
+                      {/* {user.services} */}
                     </React.Fragment>
                   }
                 />
