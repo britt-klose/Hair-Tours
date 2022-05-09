@@ -1368,6 +1368,11 @@ label form [type='radio'] {
   height: 150px;
 }
 
+#profilePhoto {
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 640px) {
 .btn.btn-lg {
   font-size: 1.5vh;
@@ -1377,6 +1382,14 @@ label form [type='radio'] {
 #instructions {
   width: 60px;
   height: 60px;
+}
+
+#profilebyid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 #home {

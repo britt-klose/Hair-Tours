@@ -46,7 +46,10 @@ const ReviewForm = ({ profileId }) => {
             onChange={(event) => setReview(event.target.value)}
           />
           <div>
-            <button className="btn btn-info btn-block py-3" type="submit">
+            <button
+              className="btn btn-lg btn-info btn-block py-3"
+              type="submit"
+            >
               Submit
             </button>
           </div>
