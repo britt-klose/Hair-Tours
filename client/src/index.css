@@ -1410,6 +1410,10 @@ label form [type='radio'] {
   padding: 0.8rem 1.4rem;
 }
 
+.name {
+  width: 100%;
+}
+
 .reviewForm {
   align-items: center;
 }
