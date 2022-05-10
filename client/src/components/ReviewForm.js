@@ -34,17 +34,26 @@ const ReviewForm = ({ profileId }) => {
 
       {/* {Auth.loggedIn() ? ( */}
       <form
-        className="flex-column justify-center justify-space-between-md align-center"
+        className="reviewForm flex-column justify-center justify-space-between-md"
         onSubmit={handleFormSubmit}
       >
         <Ratings className="align-content-start justify-flex-start w-25" />
+
         <div className="flex-row w-100">
           <input
             placeholder="Were you satisfied with your last service?"
             value={review}
-            className="form-input w-100"
+            className="form-input"
             onChange={(event) => setReview(event.target.value)}
-          />
+          />{" "}
+          <div className="w-25 name">
+            <input
+              placeholder="Name"
+              // value={}
+              className="form-input w-25"
+              onChange={(event) => setReview(event.target.value)}
+            />
+          </div>
           <div>
             <button
               className="btn btn-lg btn-info btn-block py-3"

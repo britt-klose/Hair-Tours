@@ -15,9 +15,13 @@ const StylistList = ({ users }) => {
         users.map((user) => (
           <div key={user._id}>
             <List sx={{ width: "100%", bgcolor: "background.paper" }}>
-              <ListItem alignItems="flex-start">
+              <ListItem id="stylistList">
                 <ListItemAvatar>
-                  <Avatar alt="Profile Pic" src={user.profilePhoto} />
+                  <Avatar
+                    alt="Profile Pic"
+                    src={user.profilePhoto}
+                    sx={{ marginLeft: "10px" }}
+                  />
                 </ListItemAvatar>
 
                 <ListItemText
@@ -38,7 +42,7 @@ const StylistList = ({ users }) => {
                   }
                 />
                 <Link to={`/stylists/${user._id}`}>
-                  <Button variant="contained" size="small">
+                  <Button variant="contained" size="small" type="button">
                     VIEW PROFILE
                   </Button>
                 </Link>
