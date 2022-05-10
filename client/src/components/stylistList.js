@@ -17,7 +17,7 @@ const StylistList = ({ users }) => {
             <List sx={{ width: "100%", bgcolor: "background.paper" }}>
               <ListItem alignItems="flex-start">
                 <ListItemAvatar>
-                  <Avatar alt="Profile Pic" src={user.profilePhoto} />
+                  <Avatar alt="Profile Pic" src={users.profilePhoto} />
                 </ListItemAvatar>
 
                 <ListItemText
