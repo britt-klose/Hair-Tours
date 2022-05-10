@@ -21,7 +21,7 @@ const ProviderbyId = () => {
 
   return (
     <div style={{ width: "80%", height: "100%", background: "white" }}>
-      <div className="flex-row" id="profilebyid">
+      <div className="flex-row mt-3" id="profilebyid">
         <div id="profilePhoto" className="col-lg-1 justify-center">
           <Avatar
             alt="Profile Photo"
@@ -41,7 +41,7 @@ const ProviderbyId = () => {
             </div>
           </div>
         </div>
-        <div className="card-footer text-center m-3">
+        <div className="card-footer text-center">
           <br></br>
           <PopupWidget
             url={`https://calendly.com/${user.calId}`}
@@ -52,7 +52,7 @@ const ProviderbyId = () => {
           />
         </div>
       </div>
-      <div className="my-4 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+      <div className="mt-3 p-4" style={{ border: "1px solid #1a1a1a" }}>
         <ReviewForm />
         <ReviewList reviews={review} />
       </div>

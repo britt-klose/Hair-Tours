@@ -34,7 +34,7 @@ const ReviewForm = ({ profileId }) => {
 
       {/* {Auth.loggedIn() ? ( */}
       <form
-        className="flex-column justify-center justify-space-between-md align-center"
+        className="reviewForm flex-column justify-center justify-space-between-md"
         onSubmit={handleFormSubmit}
       >
         <Ratings className="align-content-start justify-flex-start w-25" />

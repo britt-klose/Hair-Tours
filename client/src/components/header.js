@@ -50,11 +50,6 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Link to="/">
-            <h4 className="hairTours" style={{ color: "white" }}>
-              Hair Tours
-            </h4>
-          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -106,6 +101,11 @@ const ResponsiveAppBar = () => {
               </MenuItem>
             </Menu>
           </Box>
+          <Link to="/">
+            <h4 className="hairTours" style={{ color: "white" }}>
+              Hair Tours
+            </h4>
+          </Link>
 
           <Box
             sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}

@@ -1387,10 +1387,31 @@ label form [type='radio'] {
   width: 50%;
 }
 
+.serviceBox {
+  background-color: rgb(79, 126, 255);
+  color: white;
+  font-weight: bold;
+  width: fit-content;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 3px;
+}
+
+.reviewBox {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  border-radius: 8px;
+  padding: 5px;
+}
+
 @media screen and (max-width: 640px) {
 .btn.btn-lg {
   font-size: 1.5vh;
   padding: 0.8rem 1.4rem;
+}
+
+.reviewForm {
+  align-items: center;
 }
 
 #stylists {

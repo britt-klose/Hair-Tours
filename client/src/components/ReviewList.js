@@ -1,4 +1,5 @@
 import React from "react";
+import Rating from "@mui/material/Rating";
 
 const ReviewList = ({ reviews = [] }) => {
   if (!reviews.length) {
@@ -10,11 +11,13 @@ const ReviewList = ({ reviews = [] }) => {
       <div className="flex-row justify-space-between my-4">
         {reviews &&
           reviews.map((review) => (
-            <div key={review} className="col-12 col-xl-6">
-              <div className="card mb-3">
-                <h4 className="card-header bg-dark text-light p-2 m-0">
+            <div key={review} className="reviewBox">
+              <div className="mb-3">
+                <Rating name="read-only" value={review.rating} readOnly />
+                <h4 className="p-2 m-0">
                   {review.description} <br />
                 </h4>
+                <h6>- {review.reviewAuthor}</h6>
               </div>
             </div>
           ))}
