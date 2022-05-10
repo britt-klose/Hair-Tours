@@ -19,6 +19,21 @@ const ProviderbyId = () => {
   const service = user.services;
   const review = user.reviews;
 
+  function isCalendlyEvent(e) {
+    return e.data.event && e.data.event.indexOf("calendly") === 0;
+  }
+
+  window.addEventListener("message", function (e) {
+    if (isCalendlyEvent(e)) {
+      console.log(e.data);
+      console.log(e.data.event);
+    }
+    if (e.data.event === "calendly.event_scheduled") {
+      window.location.replace("/services");
+      console.log("Yay!");
+    }
+  });
+
   return (
     <div style={{ width: "80%", height: "100%", background: "white" }}>
       <div className="flex-row mt-3" id="profilebyid">
