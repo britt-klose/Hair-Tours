@@ -33,7 +33,7 @@ const Providers = () => {
   // };
 
   return (
-    <div className="card bg-white card-rounded w-50">
+    <div className="card bg-white card-rounded" id="stylists">
       <div className="card-header text-center">
         <h1>Choose a service provider:</h1>
       </div>
