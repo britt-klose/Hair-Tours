@@ -1383,10 +1383,27 @@ label form [type='radio'] {
   align-items: center;
 }
 
+#stylists {
+  width: 50%;
+}
+
 @media screen and (max-width: 640px) {
 .btn.btn-lg {
   font-size: 1.5vh;
   padding: 0.8rem 1.4rem;
+}
+
+#stylists {
+  width: 90%;
+  margin-top: 20px;
+}
+
+#stylistList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 [class*='col-'] {

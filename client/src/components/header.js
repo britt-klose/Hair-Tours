@@ -128,7 +128,7 @@ const ResponsiveAppBar = () => {
                 </Button>
               </Link>
             </div>
-            <div className="row justify-center align-center">
+            <div className="row align-center">
               <Link to="/login">
                 <Button sx={{ my: 2, color: "white", display: "block" }}>
                   <Typography textAlign="center">Login / Signup</Typography>

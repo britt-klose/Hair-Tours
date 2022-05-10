@@ -1,8 +1,8 @@
 import React from "react";
 
-const ReviewList = ({ reviews }) => {
-  if (!ReviewList.length) {
-    return <h3>No review Yet</h3>;
+const ReviewList = ({ reviews = [] }) => {
+  if (!reviews.length) {
+    return <h3>No Reviews Yet</h3>;
   }
 
   return (
@@ -13,7 +13,7 @@ const ReviewList = ({ reviews }) => {
             <div key={review} className="col-12 col-xl-6">
               <div className="card mb-3">
                 <h4 className="card-header bg-dark text-light p-2 m-0">
-                  {review} <br />
+                  {review.description} <br />
                 </h4>
               </div>
             </div>
