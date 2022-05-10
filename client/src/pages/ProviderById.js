@@ -5,7 +5,7 @@ import Avatar from "@mui/material/Avatar";
 import ReviewList from "../components/ReviewList";
 import ReviewForm from "../components/ReviewForm";
 import { PopupWidget } from "react-calendly";
-import ServiceList from '../components/services'
+import ServiceList from "../components/services";
 
 const ProviderbyId = () => {
   let { userId } = useParams();
@@ -16,22 +16,21 @@ const ProviderbyId = () => {
 
   const user = data?.user || [];
 
-  
   return (
     <div style={{ width: "80%", height: "100%", background: "white" }}>
-      <div className="flex-row">
-        <div className="col-1">
+      <div className="flex-row" id="profilebyid">
+        <div id="profilePhoto" className="col-lg-1">
           <Avatar
             alt="Profile Photo"
             src={user.profilePhoto}
             sx={{ width: 75, height: 75 }}
           />
         </div>
-        <div className="col-7">
+        <div className="col-lg-7">
           <h1>{user.username}</h1>
           <h3>{user.email}</h3>
         </div>
-        <div className="col-3">
+        <div className="col-lg-3">
           <div className="card-body text-center mt-3">
             <div name="services">
               <h1>Services:</h1>

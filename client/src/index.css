@@ -456,6 +456,10 @@ a:hover {
   min-height: 100vh;
 }
 
+.min-75-vh {
+  min-height: 75vh;
+}
+
 .min-100-vw {
   min-width: 100vw;
 }
@@ -541,7 +545,7 @@ a:hover {
 }
 
 .mt-5 {
-  margin-top: 1.625rem;
+  margin-top: 25vh;
 }
 
 .mt-auto {
@@ -1276,6 +1280,12 @@ label form [type='radio'] {
   margin-right: -15px;
 }
 
+.hairTours {
+  font-family: 'Shrikhand', cursive;
+  font-size: 2vh;
+  font-weight: 100;
+}
+
 [class*='col-'] {
   position: relative;
   width: 100%;
@@ -1368,15 +1378,35 @@ label form [type='radio'] {
   height: 150px;
 }
 
+#profilePhoto {
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 640px) {
 .btn.btn-lg {
   font-size: 1.5vh;
   padding: 0.8rem 1.4rem;
 }
 
+[class*='col-'] {
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: auto;
+}
+
 #instructions {
   width: 60px;
   height: 60px;
+}
+
+#profilebyid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 #home {

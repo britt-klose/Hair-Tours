@@ -9,22 +9,17 @@ const ServiceList = () => {
     variables: { userId: userId },
   });
 
-  const user = data?.user.services || [];
+  const user = data?.user || [];
+  const services = user.services;
+  console.log(user, services);
 
-  if (user.length) {
-    console.log(user);
-    return (
-      <div>
-        {user.map((service) => (
-        <div>
-          <p>{service.serviceName} ${service.price}</p>
-        </div>
-      ))}
-      </div>
-    );
-  }
   return (
     <div>
+      {/* {user.services.map((service) => (
+        <div key={service}>
+          <p>{service.serviceName}</p>
+        </div>
+      ))} */}
     </div>
   );
 };

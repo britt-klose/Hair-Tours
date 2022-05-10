@@ -51,7 +51,7 @@ const Services = () => {
           <div>
             <ButtonBases onClick={handleInputChange} value={servicesList} />
             <Link to="/checkout">
-              <button className="btn btn-lg btn-danger ">Checkout</button>
+              <button className="btn btn-lg btn-danger">Checkout</button>
             </Link>
           </div>
         </form>
