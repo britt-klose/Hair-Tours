@@ -43,6 +43,7 @@ export const QUERY_STYLISTS = gql`
         reviewId
         description
         reviewAuthor
+        rating
       }
       services {
         serviceId
@@ -64,6 +65,7 @@ export const QUERY_SINGLE_STYLIST = gql`
         reviewId
         description
         reviewAuthor
+        rating
       }
       services {
         serviceId
