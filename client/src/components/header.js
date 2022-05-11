@@ -46,7 +46,7 @@ const ResponsiveAppBar = () => {
   const user = data?.user || [];
 
   return (
-    <AppBar position="static" color="secondary">
+    <AppBar position="static" color="warning">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
