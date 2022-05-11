@@ -19,6 +19,19 @@ const ProviderbyId = () => {
   const service = user.services;
   const review = user.reviews;
 
+  function isCalendlyEvent(e) {
+    return e.data.event && e.data.event.indexOf("calendly") === 0;
+  }
+
+  window.addEventListener("message", function (e) {
+    if (isCalendlyEvent(e)) {
+      console.log(e.data.event);
+    }
+    if (e.data.event === "calendly.event_scheduled") {
+      window.location.replace("/services");
+    }
+  });
+
   return (
     <div style={{ width: "80%", height: "100%", background: "white" }}>
       <div className="flex-row mt-3" id="profilebyid">
@@ -33,7 +46,7 @@ const ProviderbyId = () => {
           <h1>{user.username}</h1>
           <h3>{user.email}</h3>
         </div>
-        <div className="col-lg-3">
+        <div className="col-lg-4">
           <div className="card-body text-center mt-3">
             <div name="services">
               <h1>Services:</h1>

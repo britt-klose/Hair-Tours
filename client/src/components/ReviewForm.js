@@ -17,7 +17,7 @@ const ReviewForm = ({ profileId }) => {
 
     try {
       const data = await addReview({
-        variables: { profileId, review },
+        variables: { review },
       });
 
       console.log(data);
