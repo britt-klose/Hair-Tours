@@ -24,11 +24,9 @@ const userSchema = new Schema(
     },
     calId: {
       type: String,
-      required: true
     },
     profilePhoto: {
       type: String,
-      required: true
     },
     // status: {
     //   type: String,

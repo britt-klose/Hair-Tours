@@ -29,10 +29,18 @@ const resolvers = {
     },
   },
   Mutation: {
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
-      const token = signToken(user);
-      return { token, user };
+    addUser: async (parent, { username, email, password, calId }) => {
+      try {
+        const user = await User.create({ username, email, password, calId });
+        const token = signToken(user);
+        return {
+          token,
+          user,
+        };
+      } catch (err) {
+        console.log(err);
+        throw new Error(JSON.stringify(err));
+      }
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -75,7 +83,10 @@ const resolvers = {
     //   }
     //   throw new AuthenticationError("You need to be logged in to book an appointment");
     // },
-    addReview: async (parent, { userId, description, reviewAuthor, rating }) => {
+    addReview: async (
+      parent,
+      { userId, description, reviewAuthor, rating }
+    ) => {
       return User.findOneAndUpdate(
         { _id: userId },
         {
@@ -86,19 +97,20 @@ const resolvers = {
         { new: true, runvalidators: true }
       );
     },
-    updateUser: async (parent, {id, username, email, services }) => {
+    updateUser: async (parent, { id, username, email, services }) => {
       // if (context.user) {
-      const updateUser = await 
-      User.findOneAndUpdate(
-          { _id: id },
-          { $addToSet: { 
-            user: {username, email, services},
-           }, },
-          { new: true, runValidators: true }
-        );
-        // const token = signToken(user);
-        // return {token, updateUser};
-        return updateUser;
+      const updateUser = await User.findOneAndUpdate(
+        { _id: id },
+        {
+          $addToSet: {
+            user: { username, email, services },
+          },
+        },
+        { new: true, runValidators: true }
+      );
+      // const token = signToken(user);
+      // return {token, updateUser};
+      return updateUser;
       //}
       //throw new AuthenticationError("You need to be logged in!");
     },

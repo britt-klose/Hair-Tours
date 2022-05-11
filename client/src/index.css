@@ -373,7 +373,7 @@ h6 {
 }
 
 h1 {
-  font-size: 5.5vh;
+  font-size: 2vh;
 }
 
 h2 {
@@ -1456,6 +1456,16 @@ label form [type='radio'] {
   margin-top: 10%;
   height: 20%;
   width: 80%;
+}
+}
+
+@media screen and (max-width: 1200px) {
+  #profilebyid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 }
 /* col-sm */
