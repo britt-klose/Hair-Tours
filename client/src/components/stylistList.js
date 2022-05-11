@@ -42,7 +42,7 @@ const StylistList = ({ users }) => {
                   }
                 />
                 <Link to={`/stylists/${user._id}`}>
-                  <Button variant="contained" size="small" type="button">
+                  <Button variant="contained" size="small" type="button" color="secondary"> 
                     VIEW PROFILE
                   </Button>
                 </Link>
