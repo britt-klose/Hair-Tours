@@ -27,6 +27,7 @@ export const QUERY_REVIEWS = gql`
       description
       reviewAuthor
       createdAt
+      rating
     }
   }
 `;
