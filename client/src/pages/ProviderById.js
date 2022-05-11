@@ -25,12 +25,10 @@ const ProviderbyId = () => {
 
   window.addEventListener("message", function (e) {
     if (isCalendlyEvent(e)) {
-      console.log(e.data);
       console.log(e.data.event);
     }
     if (e.data.event === "calendly.event_scheduled") {
       window.location.replace("/services");
-      console.log("Yay!");
     }
   });
 

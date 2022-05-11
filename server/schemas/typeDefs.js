@@ -47,7 +47,12 @@ const typeDefs = gql`
       description: String!
       rating: Int!
     ): User
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(
+      username: String!
+      email: String!
+      password: String!
+      calId: String
+    ): Auth
     login(email: String!, password: String!): Auth
     updateUser(id: ID!, input: UpdateUserInput): User
   }
