@@ -6,11 +6,11 @@ const ServiceList = ({ services = [] }) => {
   }
 
   return (
-    <div>
+    <div className="row">
       {services &&
         services.map((service) => (
           <div key={service} className="serviceBox">
-            <p>{service.serviceName}</p>
+            <div>{service.serviceName} - ${service.price}</div>
           </div>
         ))}
     </div>

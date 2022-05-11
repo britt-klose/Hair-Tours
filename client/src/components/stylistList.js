@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -7,8 +7,10 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+// import ServiceList from "./serviceList";
 
 const StylistList = ({ users }) => {
+
   return (
     <div>
       {users.length &&
@@ -35,9 +37,7 @@ const StylistList = ({ users }) => {
                         color="text.primary"
                       >
                         {" "}
-                        Hi there!
                       </Typography>
-                      {/* {user.services} */}
                     </React.Fragment>
                   }
                 />
