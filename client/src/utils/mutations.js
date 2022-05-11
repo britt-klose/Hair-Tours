@@ -36,6 +36,7 @@ mutation AddReview($userId: ID!, $description: String!, $reviewAuthor:String!, $
       reviewId
       reviewAuthor
       description
+      createdAt
       rating
     }
   }
