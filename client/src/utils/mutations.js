@@ -29,37 +29,49 @@ export const ADD_PROVIDER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-  mutation addReview($description: String!, $reviewAuthor: String!) {
-    addReview(description: $description, reviewAuthor: $reviewAuthor) {
+mutation AddReview($userId: ID!, $description: String!, $reviewAuthor:String!, $rating: Int!){
+  addReview (userId: $userId, description: $description, reviewAuthor:$reviewAuthor, rating: $rating){
+    username
+    reviews {
       reviewId
-      description
       reviewAuthor
-      createdAt
+      description
+      rating
     }
+  }
   }
 `;
 
 export const ADD_SERVICE=gql`
-  mutation addService($serviceName: String!, $price: Int!){
-    addService (serviceName: $serviceName, price: $price){
-      serviceId
-      serviceName
-      price
-    }
+mutation AddService($userId: ID!, $serviceId: ID!, $serviceName: String!, $price: Int!)
+{addService (userId: $userId, serviceId: $serviceId, serviceName: $serviceName, price: $price){
+  username
+  services {
+    serviceId
+    serviceName
+    price
   }
+}
+}
 `;
 
+export const REMOVE_SERVICE=gql`
+mutation RemoveService($userId: ID!, $serviceId: ID!)
+{removeService (userId: $userId, serviceId: $serviceId){
+  _id
+  username
+  services {
+    serviceId
+  }
+}
+`;
 
 export const UPDATE_USER = gql`
-  mutation updateUser($user: updateUserInput!) {
-    updateUser(user: $user) {
-      username
+mutation UpdateUser($id: ID!, $userData: UpdateUserInput!){
+  updateUser (id: $id, userData: $userData) {
+      _id
       email
-      services {
-        serviceId
-        serviceName
-        price
-      }
-    }
+      username
+  }
   }
 `;
