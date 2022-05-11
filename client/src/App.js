@@ -7,6 +7,7 @@ import Providers from "./pages/Providers";
 import ProviderById from "./pages/ProviderById";
 import Checkout from "./pages/checkout/Checkout";
 import Profile from "./pages/Profile";
+import About from "./pages/About";
 import SignIn from "./components/login";
 import SignUp from "./components/signup";
 import NotFound from "./pages/NotFound";
@@ -34,6 +35,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/login" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />
+              <Route path = "/about" element={<About/>}/> 
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

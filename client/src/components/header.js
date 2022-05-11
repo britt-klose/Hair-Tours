@@ -15,8 +15,7 @@ import Button from "@mui/material/Button";
 //import Tooltip from '@mui/material/Tooltip';
 import MenuItem from "@mui/material/MenuItem";
 import { QUERY_SINGLE_STYLIST } from "../utils/queries";
-//To do: change menu (about us, services, providers, profile, log in)
-// const pages = ["About us", "Stylist", "Services", "log in"];
+
 const settings = ["Profile", "Logout"];
 
 const ResponsiveAppBar = () => {
@@ -47,7 +46,7 @@ const ResponsiveAppBar = () => {
   const user = data?.user || [];
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="secondary">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -178,35 +177,4 @@ const ResponsiveAppBar = () => {
 };
 export default ResponsiveAppBar;
 
-// import React from "react";
 
-// //UI components imported from material
-// import AppBar from "@mui/material/AppBar";
-// import Toolbar from "@mui/material/Toolbar";
-// import Typography from "@mui/material/Typography";
-// import Button from "@mui/material/Button";
-// import IconButton from "@mui/material/IconButton";
-// import MenuIcon from "@mui/icons-material/Menu";
-
-// export default function Header() {
-//   return (
-//     <AppBar position="sticky">
-//       <Toolbar>
-//         <IconButton
-//           size="large"
-//           edge="start"
-//           color="inherit"
-//           aria-label="menu"
-//           sx={{ mr: 2 }}
-//         >
-//           <MenuIcon />
-//         </IconButton>
-
-//         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-//           Hair Tours
-//         </Typography>
-//         <Button color="inherit">Login</Button>
-//       </Toolbar>
-//     </AppBar>
-//   );
-// }
