@@ -29,12 +29,13 @@ export const ADD_PROVIDER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-  mutation addReview($description: String!, $reviewAuthor: String!) {
-    addReview(description: $description, reviewAuthor: $reviewAuthor) {
+  mutation addReview($description: String!, $reviewAuthor: String!, $rating: Int!) {
+    addReview(description: $description, reviewAuthor: $reviewAuthor, rating: $rating) {
       reviewId
       description
       reviewAuthor
       createdAt
+      rating
     }
   }
 `;

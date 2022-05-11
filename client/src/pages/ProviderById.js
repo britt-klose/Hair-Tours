@@ -48,7 +48,7 @@ const ProviderbyId = () => {
           <h1>{user.username}</h1>
           <h3>{user.email}</h3>
         </div>
-        <div className="col-lg-3">
+        <div className="col-lg-4">
           <div className="card-body text-center mt-3">
             <div name="services">
               <h1>Services:</h1>
