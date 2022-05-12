@@ -56,7 +56,6 @@ export const ADD_REVIEW = gql`
       rating
     }
   }
-  }
 `;
 
 export const ADD_SERVICE=gql`
@@ -80,6 +79,7 @@ mutation RemoveService($userId: ID!, $serviceId: ID!)
   services {
     serviceId
   }
+}
 }
 `;
 
