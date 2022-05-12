@@ -29,10 +29,13 @@ const resolvers = {
     },
   },
   Mutation: {
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+    addUser: async (parent, { username, email, password, calId }) => {
+      const user = await User.create({ username, email, password, calId });
       const token = signToken(user);
-      return { token, user };
+      return {
+        token,
+        user,
+      };
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -51,31 +54,10 @@ const resolvers = {
 
       return { token, user };
     },
-    // saveAppt: async (
-    //   parent,
-    //   { apptId, client, stylist, service, scheduledFor },
-    //   context
-    // ) => {
-    //   if (context.user) {
-    //     const appointment = await Appointment.create({
-    //       apptId,
-    //       client,
-    //       stylist,
-    //       service,
-    //       scheduledFor,
-
-    //     });
-
-    //     await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $addToSet: { savedAppt: appointment._id } },
-    //       {new: true, runvalidators: true}
-    //     );
-    //     return appointment;
-    //   }
-    //   throw new AuthenticationError("You need to be logged in to book an appointment");
-    // },
-    addReview: async (parent, { userId, description, reviewAuthor, rating }) => {
+    addReview: async (
+      parent,
+      { userId, description, reviewAuthor, rating }
+    ) => {
       return User.findOneAndUpdate(
         { _id: userId },
         {
@@ -109,6 +91,7 @@ const resolvers = {
           {new: true,
           runvalidators: true,}
         );
+
       //}
       //throw new AuthenticationError('Sytlists must be logged in to update services.');
     },
@@ -126,6 +109,7 @@ const resolvers = {
      // }
       //throw new AuthenticationError('Sytlists must be logged in to update services.');
     },
+
   },
 };
 

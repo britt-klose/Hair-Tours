@@ -7,12 +7,12 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-
+//make mobile responsive
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
-  padding: theme.spacing(1),
+  padding: theme.spacing(2),
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
@@ -20,8 +20,8 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function groupAvatars() {
   return (
     <Box sx={{ width: '100%' }}>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid item xs={6}>
+      <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 3, lg:7 }}>
+        <Grid item xs={4.2}>
           <Item>
             <Card sx={{ maxWidth: 1000 }}>
       <CardMedia
@@ -43,7 +43,7 @@ export default function groupAvatars() {
     </Card>
     </Item>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={4.2}>
           <Item>
           <Card sx={{ maxWidth: 1000 }}>
       <CardMedia
@@ -66,7 +66,7 @@ export default function groupAvatars() {
 
           </Item>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={4.2}>
           <Item>
           <Card sx={{ maxWidth: 1000 }}>
       <CardMedia
@@ -89,7 +89,7 @@ export default function groupAvatars() {
 
           </Item>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={4.2}>
           <Item>
 
           <Card sx={{ maxWidth: 1000 }}>

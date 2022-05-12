@@ -14,25 +14,41 @@ export const LOGIN = gql`
   }
 `;
 
-export const ADD_PROVIDER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
-      token
+export const ADD_USER = gql`
+  mutation addUser(
+    $username: String!
+    $email: String!
+    $password: String!
+    $calId: String
+  ) {
+    addUser(
+      username: $username
+      email: $email
+      password: $password
+      calId: $calId
+    ) {
       user {
         _id
         username
         email
         password
+        calId
       }
     }
   }
 `;
 
 export const ADD_REVIEW = gql`
-mutation AddReview($userId: ID!, $description: String!, $reviewAuthor:String!, $rating: Int!){
-  addReview (userId: $userId, description: $description, reviewAuthor:$reviewAuthor, rating: $rating){
-    username
-    reviews {
+  mutation addReview(
+    $description: String!
+    $reviewAuthor: String!
+    $rating: Int!
+  ) {
+    addReview(
+      description: $description
+      reviewAuthor: $reviewAuthor
+      rating: $rating
+    ) {
       reviewId
       reviewAuthor
       description

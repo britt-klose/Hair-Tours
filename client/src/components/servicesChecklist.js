@@ -4,16 +4,25 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Checkbox from "@mui/material/Checkbox";
-import Avatar from "@mui/material/Avatar";
-// edit or merge?
+
 const ServicesChecklist = () => {
+  const services = [
+    { serviceName: "Hair Cut" },
+    { serviceName: "Coloring" },
+    { serviceName: "Styling" },
+    { serviceName: "Hot Shave" },
+    { serviceName: "Beard Trim" },
+    { serviceName: "Wax" },
+  ];
+
   const [checked, setChecked] = useState([1]);
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
+
+    console.log(value);
 
     if (currentIndex === -1) {
       newChecked.push(value);
@@ -29,7 +38,7 @@ const ServicesChecklist = () => {
       dense
       sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
     >
-      {[0, 1, 2, 3].map((value) => {
+      {services.map((service, value) => {
         const labelId = `checkbox-list-secondary-label-${value}`;
         return (
           <ListItem
@@ -45,13 +54,7 @@ const ServicesChecklist = () => {
             disablePadding
           >
             <ListItemButton>
-              <ListItemAvatar>
-                <Avatar
-                  alt={`Avatar n°${value + 1}`}
-                  src={`/static/images/avatar/${value + 1}.jpg`}
-                />
-              </ListItemAvatar>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+              <ListItemText id={labelId} primary={service.serviceName} />
             </ListItemButton>
           </ListItem>
         );

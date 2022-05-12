@@ -12,9 +12,9 @@ import Container from "@mui/material/Container";
 import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-//import Tooltip from '@mui/material/Tooltip';
 import MenuItem from "@mui/material/MenuItem";
 import { QUERY_SINGLE_STYLIST } from "../utils/queries";
+import Auth from "../utils/auth";
 
 const settings = ["Profile", "Logout"];
 
@@ -25,9 +25,6 @@ const ResponsiveAppBar = () => {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  // const handleOpenUserMenu = (event) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -46,7 +43,7 @@ const ResponsiveAppBar = () => {
   const user = data?.user || [];
 
   return (
-    <AppBar position="static" color="secondary">
+    <AppBar position="static" color="warning">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -94,9 +91,25 @@ const ResponsiveAppBar = () => {
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/login">
-                  <Typography textAlign="center">Login / Signup</Typography>
-                </Link>
+                {Auth.loggedIn() ? (
+                  <>
+                    <Link to="/profile">
+                      <Button sx={{ my: 2, color: "white", display: "block" }}>
+                        <Typography textAlign="center">Profile</Typography>
+                      </Button>
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/login">
+                      <Button sx={{ my: 2, color: "white", display: "block" }}>
+                        <Typography textAlign="center">
+                          Login / Signup
+                        </Typography>
+                      </Button>
+                    </Link>
+                  </>
+                )}
               </MenuItem>
             </Menu>
           </Box>
@@ -128,11 +141,23 @@ const ResponsiveAppBar = () => {
               </Link>
             </div>
             <div className="row align-center">
-              <Link to="/login">
-                <Button sx={{ my: 2, color: "white", display: "block" }}>
-                  <Typography textAlign="center">Login / Signup</Typography>
-                </Button>
-              </Link>
+              {Auth.loggedIn() ? (
+                <>
+                  <Link to="/profile">
+                    <Button sx={{ my: 2, color: "white", display: "block" }}>
+                      <Typography textAlign="center">Profile</Typography>
+                    </Button>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link to="/login">
+                    <Button sx={{ my: 2, color: "white", display: "block" }}>
+                      <Typography textAlign="center">Login / Signup</Typography>
+                    </Button>
+                  </Link>
+                </>
+              )}
               <Avatar
                 alt="Profile Photo"
                 src={user.profilePhoto}
@@ -142,11 +167,6 @@ const ResponsiveAppBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            {/* <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip> */}
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
@@ -176,5 +196,3 @@ const ResponsiveAppBar = () => {
   );
 };
 export default ResponsiveAppBar;
-
-

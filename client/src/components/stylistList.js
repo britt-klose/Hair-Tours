@@ -22,19 +22,21 @@ const StylistList = ({ users }) => {
                   <Avatar
                     alt="Profile Pic"
                     src={user.profilePhoto}
-                    sx={{ marginLeft: "10px" }}
+                    sx={{ marginLeft: "3px", width: 56, height: 56 }}
                   />
                 </ListItemAvatar>
 
-                <ListItemText
+                <ListItemText 
+                 sx={{ display: "inline",margin:"15px",}}
                   primary={user.username}
                   secondary={
                     <React.Fragment>
                       <Typography
-                        sx={{ display: "inline" }}
+                        sx={{ display: "inline",margin:"15px" }}
                         component="span"
                         variant="body2"
                         color="text.primary"
+                        fontSize={"15pt"}
                       >
                         {" "}
                       </Typography>
@@ -42,7 +44,7 @@ const StylistList = ({ users }) => {
                   }
                 />
                 <Link to={`/stylists/${user._id}`}>
-                  <Button variant="contained" size="small" type="button" color="secondary"> 
+                  <Button variant="contained" size="medium" type="button" color="secondary"> 
                     VIEW PROFILE
                   </Button>
                 </Link>
