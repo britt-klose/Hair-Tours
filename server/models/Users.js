@@ -24,14 +24,12 @@ const userSchema = new Schema(
     },
     calId: {
       type: String,
+      required: false
     },
     profilePhoto: {
       type: String,
+      required: false
     },
-    // status: {
-    //   type: String,
-    //   required: false,
-    // },
     // savedAppts: [apptSchema],
     services: [serviceSchema],
     reviews: [reviewSchema],
