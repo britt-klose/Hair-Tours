@@ -91,9 +91,25 @@ const ResponsiveAppBar = () => {
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link to="/login">
-                  <Typography textAlign="center">Login / Signup</Typography>
-                </Link>
+                {Auth.loggedIn() ? (
+                  <>
+                    <Link to="/profile">
+                      <Button sx={{ my: 2, color: "white", display: "block" }}>
+                        <Typography textAlign="center">Profile</Typography>
+                      </Button>
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/login">
+                      <Button sx={{ my: 2, color: "white", display: "block" }}>
+                        <Typography textAlign="center">
+                          Login / Signup
+                        </Typography>
+                      </Button>
+                    </Link>
+                  </>
+                )}
               </MenuItem>
             </Menu>
           </Box>
