@@ -12,10 +12,18 @@ export const QUERY_SERVICES = gql`
 `;
 
 export const QUERY_ME = gql`
-  query me {
-    user {
+  query Me {
+    me {
+      _id
       username
       email
+      calId
+      profilePhoto
+      services {
+        serviceId
+        serviceName
+        price
+      }
     }
   }
 `;

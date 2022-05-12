@@ -6,11 +6,13 @@ const ServiceList = ({ services = [] }) => {
   }
 
   return (
-    <div className="row">
+    <div className="row align-center justify-center">
       {services &&
         services.map((service) => (
           <div key={service} className="serviceBox">
-            <div>{service.serviceName} - ${service.price}</div>
+            <div>
+              {service.serviceName} - ${service.price}
+            </div>
           </div>
         ))}
     </div>

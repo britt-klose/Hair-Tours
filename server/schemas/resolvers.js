@@ -59,30 +59,6 @@ const resolvers = {
 
       return { token, user };
     },
-    // saveAppt: async (
-    //   parent,
-    //   { apptId, client, stylist, service, scheduledFor },
-    //   context
-    // ) => {
-    //   if (context.user) {
-    //     const appointment = await Appointment.create({
-    //       apptId,
-    //       client,
-    //       stylist,
-    //       service,
-    //       scheduledFor,
-
-    //     });
-
-    //     await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $addToSet: { savedAppt: appointment._id } },
-    //       {new: true, runvalidators: true}
-    //     );
-    //     return appointment;
-    //   }
-    //   throw new AuthenticationError("You need to be logged in to book an appointment");
-    // },
     addReview: async (
       parent,
       { userId, description, reviewAuthor, rating }
@@ -98,12 +74,11 @@ const resolvers = {
       );
     },
     updateUser: async (parent, { id, username, email, services }) => {
-      // if (context.user) {
       const updateUser = await User.findOneAndUpdate(
         { _id: id },
         {
           $addToSet: {
-            user: { username, email, services },
+            user: { username, email, calId, services },
           },
         },
         { new: true, runValidators: true }
@@ -114,37 +89,6 @@ const resolvers = {
       //}
       //throw new AuthenticationError("You need to be logged in!");
     },
-    // addService: async (parent, {userId, serviceName, price}, context) => {
-    //   if (context.user){
-    //     return User.findOneAndUpdate(
-    //       {_id: userId},
-    //       {$addToSet:{
-    //         services: {serviceName, price}
-    //       },},
-    //       {new: true,
-    //       runvalidators: true,}
-    //     );
-    //   }
-    //   throw new AuthenticationError('Sytlists must be logged in to update services.');
-    // },
-
-    // removeService: async (parent, {userId, serviceId}, context) =>{
-    //   if (context.user){
-    //     return User.findOneAndUpdate(
-    //       {_id: userId},
-    //       {$pull: {services:{
-    //         _id: serviceId,
-
-    //         serviceName,
-    //         price,
-    //         },
-    //       },
-    //     },
-    //     {new: true}
-    //   );
-    //   }
-    //   throw new AuthenticationError('Sytlists must be logged in to update services.');
-    // },
   },
 };
 

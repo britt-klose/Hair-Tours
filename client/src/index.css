@@ -37,7 +37,7 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-  font-size: 2vh;
+  font-size: 3vh;
   margin: 0.67em 0;
 }
 
@@ -377,7 +377,7 @@ h6 {
 }
 
 h2 {
-  font-size: 4.2vh;
+  font-size: 2vh;
 }
 
 h3 {
@@ -1656,6 +1656,16 @@ label form [type='radio'] {
   .align-content-center-md {
     align-content: center;
   }
+}
+
+.file {
+  font-size: 2vh;
+  text-align: center
+}
+
+.imageURL {
+  font-size: 1vh;
+  margin-top: 10px;
 }
 
 /* col-lg */
