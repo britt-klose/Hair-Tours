@@ -1,12 +1,9 @@
 import { useState } from "react";
 import ButtonBases from "../components/selectService";
-
 import { useNavigate, Link } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
 import { QUERY_SERVICES } from "../utils/queries";
 import { UPDATE_USER } from "../utils/mutations";
-
-//to do: six image buttons for the services check button style
 
 const Services = () => {
   const { data } = useQuery(QUERY_SERVICES);

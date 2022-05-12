@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Auth from "../utils/auth";
 
 const theme = createTheme();
 
@@ -25,14 +26,14 @@ export default function SignUp() {
 
   const [addUser] = useMutation(ADD_USER);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      addUser({
+      const { data } = await addUser({
         variables: { ...newUser },
       });
-
+      Auth.login(data.addUser.token);
       window.location.replace("/");
     } catch (error) {
       console.log(error);
