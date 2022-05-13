@@ -10,7 +10,7 @@ import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { UPDATE_USER } from "../utils/mutations";
+import { UPDATE_USER } from "../utils/mutations"; //NUMBER 2
 import ServicesChecklist from "../components/servicesChecklist";
 import Button from "@mui/material/Button";
 import Auth from "../utils/auth";
@@ -22,7 +22,7 @@ const Profile = () => {
   const [calId, setCalId] = useState("");
   const [profilePhoto, setProfilePhoto] = useState("");
   const [imageURL, setImageURL] = useState([]);
-  const [updateUser] = useMutation(UPDATE_USER);
+  const [updateUser] = useMutation(UPDATE_USER); //NUMBER 1
 
   useEffect(() => {
     if (profilePhoto.length < 1) return;
@@ -42,15 +42,15 @@ const Profile = () => {
     username: username,
     email: email,
     calId: calId,
-    profilePhoto: profilePhoto,
-    services: services,
   };
 
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
     try {
-      const { data } = await updateUser({
-        variables: { userData: userData },
+      console.log(userData);
+
+      const { data } = updateUser({
+        variables: { username, email, calId },
       });
       console.log(data);
     } catch (err) {

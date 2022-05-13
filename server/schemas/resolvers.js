@@ -68,12 +68,12 @@ const resolvers = {
         { new: true, runvalidators: true }
       );
     },
-    updateUser: async (parent, { userData }, context) => {
+    updateUser: async (parent, { username, email, calId }, context) => {
       console.log("here");
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $set: userData },
+          { $set: { username, email, calId } },
           { new: true, runvalidators: true }
         );
         return updatedUser;
