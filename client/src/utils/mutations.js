@@ -39,56 +39,69 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-  mutation addReview(
-    $description: String!
-    $reviewAuthor: String!
-    $rating: Int!
+mutation addReview (
+ $userId: ID!
+  $reviewAuthor: String!
+  $description: String!
+  $rating: Int!
+) {
+  addReview(
+    userId: $userId
+    reviewAuthor: $reviewAuthor
+    description: $description
+    rating: $rating
   ) {
-    addReview(
-      description: $description
-      reviewAuthor: $reviewAuthor
-      rating: $rating
-    ) {
+    reviews {
       reviewId
       reviewAuthor
       description
-      createdAt
       rating
+    }
+  }
+}
+`;
+
+export const ADD_SERVICE = gql`
+  mutation AddService(
+    $userId: ID!
+    $serviceId: ID!
+    $serviceName: String!
+    $price: Int!
+  ) {
+    addService(
+      userId: $userId
+      serviceId: $serviceId
+      serviceName: $serviceName
+      price: $price
+    ) {
+      username
+      services {
+        serviceId
+        serviceName
+        price
+      }
     }
   }
 `;
 
-export const ADD_SERVICE=gql`
-mutation AddService($userId: ID!, $serviceId: ID!, $serviceName: String!, $price: Int!)
-{addService (userId: $userId, serviceId: $serviceId, serviceName: $serviceName, price: $price){
-  username
-  services {
-    serviceId
-    serviceName
-    price
+export const REMOVE_SERVICE = gql`
+  mutation RemoveService($userId: ID!, $serviceId: ID!) {
+    removeService(userId: $userId, serviceId: $serviceId) {
+      _id
+      username
+      services {
+        serviceId
+      }
+    }
   }
-}
-}
-`;
-
-export const REMOVE_SERVICE=gql`
-mutation RemoveService($userId: ID!, $serviceId: ID!)
-{removeService (userId: $userId, serviceId: $serviceId){
-  _id
-  username
-  services {
-    serviceId
-  }
-}
-}
 `;
 
 export const UPDATE_USER = gql`
-mutation UpdateUser($id: ID!, $userData: UpdateUserInput!){
-  updateUser (id: $id, userData: $userData) {
+  mutation UpdateUser($id: ID!, $userData: UpdateUserInput!) {
+    updateUser(id: $id, userData: $userData) {
       _id
       email
       username
-  }
+    }
   }
 `;
