@@ -38,6 +38,7 @@ const StylistList = ({ users }) => {
                         color="text.primary"
                         fontSize={"15pt"}
                       >
+                        Hi there!
                         {" "}
                       </Typography>
                     </React.Fragment>
