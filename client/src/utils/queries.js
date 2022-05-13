@@ -12,7 +12,7 @@ export const QUERY_SERVICES = gql`
 `;
 
 export const QUERY_ME = gql`
-  query Me {
+  query me {
     me {
       _id
       username

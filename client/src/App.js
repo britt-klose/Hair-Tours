@@ -1,6 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Providers from "./pages/Providers";
@@ -14,8 +21,25 @@ import NotFound from "./pages/NotFound";
 import Header from "./components/header";
 import Footer from "./components/footer";
 
-const client = new ApolloClient({
+const httpLink = createHttpLink({
   uri: "/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem("id_token");
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
+const client = new ApolloClient({
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
@@ -35,7 +59,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/login" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />
-              <Route path = "/about" element={<About/>}/> 
+              <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
