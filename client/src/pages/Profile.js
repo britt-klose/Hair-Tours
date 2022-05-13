@@ -1,5 +1,5 @@
 import { useQuery, useMutation } from "@apollo/client";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import { QUERY_ME } from "../utils/queries";
 import React, { useState, useEffect } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -18,7 +18,7 @@ import Auth from "../utils/auth";
 const Profile = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [services, setServices] = useState("");
+  const [services, setServices] = useState({});
   const [calId, setCalId] = useState("");
   const [image, setImage] = useState([]);
   const [imageURL, setImageURL] = useState([]);
@@ -31,21 +31,20 @@ const Profile = () => {
     setImageURL(newImageURL);
   }, [image]);
 
-  let { userId } = useParams();
+  // let { userId } = useParams();
 
   const { data } = useQuery(QUERY_ME);
+  const me = data?.me || [];
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
       const data = await updateUser({
-        variables: { userId, username },
+        variables: { username, email, calId },
       });
 
       console.log(data);
-
-      setUsername("");
     } catch (err) {
       console.error(err);
     }
@@ -63,8 +62,6 @@ const Profile = () => {
   }
 
   const theme = createTheme();
-
-  const me = data?.me || [];
 
   return (
     <ThemeProvider theme={theme}>
@@ -149,32 +146,31 @@ const Profile = () => {
                         >
                           <Typography textAlign="center">Submit</Typography>
                         </Button>
+                        <div>
+                          <Button
+                            onClick={logout}
+                            sx={{
+                              mx: "25%",
+                              my: 2,
+                              background: "red",
+                              color: "white",
+                              display: "block",
+                              width: "50%",
+                            }}
+                          >
+                            <Typography textAlign="center">LOGOUT</Typography>
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </form>
                 </Typography>
-                <Typography variant="subtitle1">{me.email}</Typography>
               </React.Fragment>
               <React.Fragment>
                 <Box sx={{ display: "flex", justifyContent: "flex-end" }}></Box>
               </React.Fragment>
             </React.Fragment>
           </Paper>{" "}
-          <div>
-            <Button
-              onClick={logout}
-              sx={{
-                mx: "25%",
-                my: 2,
-                background: "red",
-                color: "white",
-                display: "block",
-                width: "50%",
-              }}
-            >
-              <Typography textAlign="center">LOGOUT</Typography>
-            </Button>
-          </div>
         </Container>
       ) : (
         <p>

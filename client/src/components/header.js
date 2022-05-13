@@ -94,7 +94,7 @@ const ResponsiveAppBar = () => {
                 {Auth.loggedIn() ? (
                   <>
                     <Link to="/profile">
-                      <Button sx={{ my: 2, color: "white", display: "block" }}>
+                      <Button sx={{ my: 2, display: "block" }}>
                         <Typography textAlign="center">Profile</Typography>
                       </Button>
                     </Link>
@@ -102,7 +102,7 @@ const ResponsiveAppBar = () => {
                 ) : (
                   <>
                     <Link to="/login">
-                      <Button sx={{ my: 2, color: "white", display: "block" }}>
+                      <Button sx={{ my: 2, display: "block" }}>
                         <Typography textAlign="center">
                           Login / Signup
                         </Typography>
