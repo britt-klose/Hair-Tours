@@ -85,32 +85,23 @@ const ResponsiveAppBar = () => {
                   <Typography textAlign="center">Stylists</Typography>
                 </Link>
               </MenuItem>
-              <MenuItem>
-                <Link to="/services">
-                  <Typography textAlign="center">Services</Typography>
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                {Auth.loggedIn() ? (
-                  <>
+              {Auth.loggedIn() ? (
+                <>
+                  <MenuItem>
                     <Link to="/profile">
-                      <Button sx={{ my: 2, display: "block" }}>
-                        <Typography textAlign="center">Profile</Typography>
-                      </Button>
+                      <Typography textAlign="center">Profile</Typography>
                     </Link>
-                  </>
-                ) : (
-                  <>
+                  </MenuItem>
+                </>
+              ) : (
+                <>
+                  <MenuItem>
                     <Link to="/login">
-                      <Button sx={{ my: 2, display: "block" }}>
-                        <Typography textAlign="center">
-                          Login / Signup
-                        </Typography>
-                      </Button>
+                      <Typography textAlign="center">Login / Signup</Typography>
                     </Link>
-                  </>
-                )}
-              </MenuItem>
+                  </MenuItem>
+                </>
+              )}
             </Menu>
           </Box>
           <Link to="/">
@@ -132,11 +123,6 @@ const ResponsiveAppBar = () => {
               <Link to="/stylists">
                 <Button sx={{ my: 2, color: "white", display: "block" }}>
                   <Typography textAlign="center">Stylists</Typography>
-                </Button>
-              </Link>
-              <Link to="/services">
-                <Button sx={{ my: 2, color: "white", display: "block" }}>
-                  <Typography textAlign="center">Services</Typography>
                 </Button>
               </Link>
             </div>

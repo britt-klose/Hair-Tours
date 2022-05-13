@@ -16,10 +16,11 @@ const typeDefs = gql`
     serviceName: String!
     price: Int
   }
-  input UpdateUserInput {
-    userId: ID!
-    username: String!
+  input updateUserInput {
+    username: String
     email: String
+    calId: String
+    profilePhoto: String
   }
   type Review {
     reviewId: String
@@ -53,9 +54,14 @@ const typeDefs = gql`
       calId: String
     ): Auth
     login(email: String!, password: String!): Auth
-    updateUser(id: ID!, userData: UpdateUserInput!): User
-    addService(userId: ID!, serviceId: ID!, serviceName: String!, price: Int!):User
-    removeService(userId: ID!, serviceId: ID!):User
+    updateUser(userData: updateUserInput!): User
+    addService(
+      userId: ID!
+      serviceId: ID!
+      serviceName: String!
+      price: Int!
+    ): User
+    removeService(userId: ID!, serviceId: ID!): User
   }
 `;
 

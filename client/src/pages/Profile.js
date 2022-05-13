@@ -18,32 +18,40 @@ import Auth from "../utils/auth";
 const Profile = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [services, setServices] = useState({});
+  const [services, setServices] = useState([]);
   const [calId, setCalId] = useState("");
-  const [image, setImage] = useState([]);
+  const [profilePhoto, setProfilePhoto] = useState("");
   const [imageURL, setImageURL] = useState([]);
   const [updateUser] = useMutation(UPDATE_USER);
 
   useEffect(() => {
-    if (image.length < 1) return;
+    if (profilePhoto.length < 1) return;
     const newImageURL = [];
-    image.forEach((image) => newImageURL.push(URL.createObjectURL(image)));
+    profilePhoto.forEach((profilePhoto) =>
+      newImageURL.push(URL.createObjectURL(profilePhoto))
+    );
     setImageURL(newImageURL);
-  }, [image]);
+  }, [profilePhoto]);
 
   // let { userId } = useParams();
 
   const { data } = useQuery(QUERY_ME);
   const me = data?.me || [];
 
+  const userData = {
+    username: username,
+    email: email,
+    calId: calId,
+    profilePhoto: profilePhoto,
+    services: services,
+  };
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      const data = await updateUser({
-        variables: { username, email, calId },
+      const { data } = await updateUser({
+        variables: { userData: userData },
       });
-
       console.log(data);
     } catch (err) {
       console.error(err);
@@ -57,7 +65,7 @@ const Profile = () => {
   };
 
   function onImageChange(e) {
-    setImage([...e.target.files]);
+    setProfilePhoto([...e.target.files]);
     console.log(imageURL);
   }
 
@@ -94,7 +102,7 @@ const Profile = () => {
                       Upload Image
                     </Button>{" "} */}
                       <input
-                        placeholder={image}
+                        placeholder={profilePhoto}
                         accept="image/*"
                         type="file"
                         id="select-image"
@@ -136,6 +144,7 @@ const Profile = () => {
                       <div className="w-100">
                         <Button
                           variant="contained"
+                          type="submit"
                           color="primary"
                           sx={{
                             mx: "25%",

@@ -4,7 +4,6 @@ import Ratings from "./Rating";
 import { ADD_REVIEW } from "../utils/mutations";
 
 const ReviewForm = (userId) => {
-
   const [review, setReview] = useState({
     ...userId,
     description: "",
@@ -13,14 +12,15 @@ const ReviewForm = (userId) => {
   });
 
   const [addReview, { error }] = useMutation(ADD_REVIEW);
-  
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    
+
     try {
       const { data } = addReview({
         variables: { ...review },
       });
+      console.log(data);
       window.location.reload();
     } catch (err) {
       console.error(err);
