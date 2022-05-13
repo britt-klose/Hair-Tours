@@ -8,33 +8,22 @@ import Grid from "@mui/material/Grid";
 const products = [
   {
     name: "Hair Cut",
-    desc: "A nice thing",
-    price: "$9.99",
+    desc: "Just a little off the top",
+    price: "$20",
   },
   {
-    name: "Product 2",
-    desc: "Another thing",
-    price: "$3.45",
+    name: "Coloring",
+    desc: "Breakin' 2: Electric Boogaloo",
+    price: "$25",
   },
-  {
-    name: "Product 3",
-    desc: "Something else",
-    price: "$6.51",
-  },
-  {
-    name: "Product 4",
-    desc: "Best thing of all",
-    price: "$14.11",
-  },
-  { name: "Shipping", desc: "", price: "Free" },
 ];
 
-const addresses = ["1 MUI Drive", "Reactville", "Anytown", "99999", "USA"];
+const addresses = ["", "", "", "", "USA"];
 const payments = [
-  { name: "Card type", detail: "Visa" },
-  { name: "Card holder", detail: "Mr John Smith" },
-  { name: "Card number", detail: "xxxx-xxxx-xxxx-1234" },
-  { name: "Expiry date", detail: "04/2024" },
+  { name: "Card type", detail: "" },
+  { name: "Card holder", detail: "" },
+  { name: "Card number", detail: "" },
+  { name: "Expiry date", detail: "" },
 ];
 
 export default function Review() {
@@ -54,7 +43,7 @@ export default function Review() {
         <ListItem sx={{ py: 1, px: 0 }}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            $34.06
+            $45
           </Typography>
         </ListItem>
       </List>
@@ -63,7 +52,7 @@ export default function Review() {
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
             Shipping
           </Typography>
-          <Typography gutterBottom>John Smith</Typography>
+          <Typography gutterBottom>Sam Meske</Typography>
           <Typography gutterBottom>{addresses.join(", ")}</Typography>
         </Grid>
         <Grid item container direction="column" xs={12} sm={6}>

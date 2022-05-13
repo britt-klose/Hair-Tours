@@ -69,7 +69,6 @@ const resolvers = {
       );
     },
     updateUser: async (parent, { username, email, calId }, context) => {
-      console.log("here");
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
