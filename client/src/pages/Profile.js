@@ -22,7 +22,7 @@ const Profile = () => {
   const [calId, setCalId] = useState("");
   const [profilePhoto, setProfilePhoto] = useState("");
   const [imageURL, setImageURL] = useState([]);
-  const [updateUser] = useMutation(UPDATE_USER); //NUMBER 1
+  const [updateUser] = useMutation(UPDATE_USER);
 
   useEffect(() => {
     if (profilePhoto.length < 1) return;
@@ -32,8 +32,6 @@ const Profile = () => {
     );
     setImageURL(newImageURL);
   }, [profilePhoto]);
-
-  // let { userId } = useParams();
 
   const { data } = useQuery(QUERY_ME);
   const me = data?.me || [];
@@ -98,15 +96,11 @@ const Profile = () => {
                     />
 
                     <div className="align-center my-5 file">
-                      {/* <Button variant="contained" color="primary">
-                      Upload Image
-                    </Button>{" "} */}
                       <input
                         placeholder={profilePhoto}
                         accept="image/*"
                         type="file"
                         id="select-image"
-                        // style={{ display: "none" }}
                         onChange={onImageChange}
                       />
                     </div>
