@@ -41,6 +41,14 @@ h1 {
   margin: 0.67em 0;
 }
 
+#abouth1{
+  margin-top: 100px;
+  font-size: 40pt;
+  color:rgb(247, 203, 203) ;
+  
+
+}
+
 /* Grouping content
    ========================================================================== */
 /**
@@ -363,7 +371,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 16px;
-  color: #1a1a1a;
+  color: #2e0000;
 }
 
 h1,

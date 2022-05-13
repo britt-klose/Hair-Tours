@@ -10,20 +10,26 @@ import Typography from '@mui/material/Typography';
 //make mobile responsive
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#c44766',
   ...theme.typography.body2,
-  padding: theme.spacing(2),
+  padding: theme.spacing(3),
   textAlign: 'center',
   color: theme.palette.text.secondary,
+  //marginLeft: 170,
+  //marginRight:-124,
+  marginTop:50,
+  paddingBottom: 20,
+  //justifyContent:"space-evenly"
 }));
 
 export default function groupAvatars() {
   return (
-    <Box sx={{ width: '100%' }}>
-      <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 3, lg:7 }}>
-        <Grid item xs={4.2}>
+    
+    <Box sx={{ width: '100%'}}>
+      <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 2, lg:2 }} sx={{justifyContent:'center'}}>
+        <Grid item xs={5}>
           <Item>
-            <Card sx={{ maxWidth: 1000 }}>
+            <Card sx={{ maxWidth: 1000}}>
       <CardMedia
         component="img"
         height="300"
@@ -35,15 +41,13 @@ export default function groupAvatars() {
         <Typography gutterBottom variant="h5" component="div">
           Brittany
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-        
-        </Typography>
+       
       </CardContent>
     
     </Card>
     </Item>
         </Grid>
-        <Grid item xs={4.2}>
+        <Grid item xs={5}>
           <Item>
           <Card sx={{ maxWidth: 1000 }}>
       <CardMedia
@@ -57,16 +61,14 @@ export default function groupAvatars() {
         <Typography gutterBottom variant="h5" component="div">
           Elizabeth
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-        
-        </Typography>
+       
       </CardContent>
     
     </Card>
 
           </Item>
         </Grid>
-        <Grid item xs={4.2}>
+        <Grid item xs={5}>
           <Item>
           <Card sx={{ maxWidth: 1000 }}>
       <CardMedia
@@ -80,16 +82,14 @@ export default function groupAvatars() {
         <Typography gutterBottom variant="h5" component="div">
           Sam
         </Typography>
-        <Typography variant="body2" color="text.secondary">
         
-        </Typography>
       </CardContent>
     
     </Card>
 
           </Item>
         </Grid>
-        <Grid item xs={4.2}>
+        <Grid item xs={5}>
           <Item>
 
           <Card sx={{ maxWidth: 1000 }}>
@@ -104,9 +104,7 @@ export default function groupAvatars() {
         <Typography gutterBottom variant="h5" component="div">
           Steve
         </Typography>
-        <Typography variant="body2" color="text.secondary">
         
-        </Typography>
       </CardContent>
     
     </Card>
