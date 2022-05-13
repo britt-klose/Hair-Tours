@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 
 const products = [
   {
-    name: "Product 1",
+    name: "Hair Cut",
     desc: "A nice thing",
     price: "$9.99",
   },

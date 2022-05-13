@@ -23,13 +23,13 @@ const ServicesChecklist = () => {
     const newChecked = [...checked];
 
     console.log(value);
-
+    console.log(currentIndex);
+    console.log(newChecked);
     if (currentIndex === -1) {
       newChecked.push(value);
     } else {
       newChecked.splice(currentIndex, 1);
     }
-
     setChecked(newChecked);
   };
 
@@ -46,7 +46,7 @@ const ServicesChecklist = () => {
             secondaryAction={
               <Checkbox
                 edge="end"
-                onChange={handleToggle(value)}
+                onClick={handleToggle(value)}
                 checked={checked.indexOf(value) !== -1}
                 inputProps={{ "aria-labelledby": labelId }}
               />

@@ -30,8 +30,8 @@ This platform allows client users 'customers' to browse various stylists, view i
 
 Deployed application: 
 
-![alt text](/Images/home.png) 
-![alt text](/Images/login.png) 
+![Homepage](/main.PNG) 
+![Stylist](/stylist.PNG) 
 
 ## License
 This application uses ISC license 
