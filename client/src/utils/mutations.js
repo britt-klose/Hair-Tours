@@ -39,26 +39,26 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-mutation addReview (
- $userId: ID!
-  $reviewAuthor: String!
-  $description: String!
-  $rating: Int!
-) {
-  addReview(
-    userId: $userId
-    reviewAuthor: $reviewAuthor
-    description: $description
-    rating: $rating
+  mutation addReview(
+    $userId: ID!
+    $reviewAuthor: String!
+    $description: String!
+    $rating: Int!
   ) {
-    reviews {
-      reviewId
-      reviewAuthor
-      description
-      rating
+    addReview(
+      userId: $userId
+      reviewAuthor: $reviewAuthor
+      description: $description
+      rating: $rating
+    ) {
+      reviews {
+        reviewId
+        reviewAuthor
+        description
+        rating
+      }
     }
   }
-}
 `;
 
 export const ADD_SERVICE = gql`
@@ -97,11 +97,13 @@ export const REMOVE_SERVICE = gql`
 `;
 
 export const UPDATE_USER = gql`
-  mutation UpdateUser($id: ID!, $userData: UpdateUserInput!) {
-    updateUser(id: $id, userData: $userData) {
+  mutation updateUser($userData: updateUserInput!) {
+    updateUser(userData: $userData) {
       _id
       email
       username
+      calId
+      profilePhoto
     }
   }
 `;

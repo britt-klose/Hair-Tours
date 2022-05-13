@@ -23,7 +23,6 @@ const resolvers = {
           .populate("services")
           .populate("reviews");
 
-        console.log(userData);
         return userData;
       }
       throw new AuthenticationError("You need to be logged in!");
@@ -69,14 +68,15 @@ const resolvers = {
         { new: true, runvalidators: true }
       );
     },
-    updateUser: async (parent, { id, userData }, context) => {
+    updateUser: async (parent, { userData }, context) => {
+      console.log("here");
       if (context.user) {
-        const updateUser = await User.findOneAndUpdate(
-          { _id: id },
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
           { $set: userData },
           { new: true, runvalidators: true }
         );
-        return updateUser;
+        return updatedUser;
       }
       throw new AuthenticationError("You need to be logged in!");
     },
