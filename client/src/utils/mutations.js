@@ -97,13 +97,11 @@ export const REMOVE_SERVICE = gql`
 `;
 
 export const UPDATE_USER = gql`
-  mutation updateUser($userData: updateUserInput!) {
-    updateUser(userData: $userData) {
-      _id
-      email
+  mutation updateUser($username: String, $email: String, $calId: String) {
+    updateUser(username: $username, email: $email, calId: $calId) {
       username
+      email
       calId
-      profilePhoto
     }
   }
-`;
+`; //NUMBER 2

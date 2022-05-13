@@ -54,7 +54,7 @@ const typeDefs = gql`
       calId: String
     ): Auth
     login(email: String!, password: String!): Auth
-    updateUser(userData: updateUserInput!): User
+    updateUser(username: String, email: String, calId: String): User
     addService(
       userId: ID!
       serviceId: ID!
