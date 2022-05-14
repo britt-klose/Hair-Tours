@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
-const secret = "Densley" || process.env.HAIR_TOURS_HASH;
+const secret = HAIR_TOURS_HASH || process.env.HAIR_TOURS_HASH;
 const expiration = "2h";
 
 module.exports = {
