@@ -28,7 +28,7 @@ To install this application go through the following steps.
 ## Usage
 This platform allows client users 'customers' to browse various stylists, view individual profiles, book appointments, select services, and add reviews to their stylist. The stylist users 'employees' can signup, login, view and update their profile, and more! The deployed application is linked below to visit for yourself, along with a few snap shots! 
 
-Deployed application: 
+Deployed application: https://hairtours.herokuapp.com/
 
 ![Homepage](/main.PNG) 
 ![Stylist](/stylist.PNG) 
