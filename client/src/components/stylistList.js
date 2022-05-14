@@ -7,10 +7,8 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-// import ServiceList from "./serviceList";
 
 const StylistList = ({ users }) => {
-
   return (
     <div>
       {users.length &&
@@ -26,24 +24,28 @@ const StylistList = ({ users }) => {
                   />
                 </ListItemAvatar>
 
-                <ListItemText 
-                 sx={{ display: "inline",margin:"15px",}}
+                <ListItemText
+                  sx={{ display: "inline", margin: "15px" }}
                   primary={user.username}
                   secondary={
                     <React.Fragment>
                       <Typography
-                        sx={{ display: "inline",margin:"15px" }}
+                        sx={{ display: "inline", margin: "15px" }}
                         component="span"
                         variant="body2"
                         color="text.primary"
                         fontSize={"15pt"}
-                      >
-                      </Typography>
+                      ></Typography>
                     </React.Fragment>
                   }
                 />
                 <Link to={`/stylists/${user._id}`}>
-                  <Button variant="contained" size="medium" type="button" color="secondary"> 
+                  <Button
+                    variant="contained"
+                    size="medium"
+                    type="button"
+                    color="secondary"
+                  >
                     VIEW PROFILE
                   </Button>
                 </Link>

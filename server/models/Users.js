@@ -1,7 +1,5 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
-
-//const apptSchema = require("./Appointment");
 const reviewSchema = require("./Reviews");
 const serviceSchema = require("./Services");
 
@@ -24,13 +22,12 @@ const userSchema = new Schema(
     },
     calId: {
       type: String,
-      required: false
+      required: false,
     },
     profilePhoto: {
       type: String,
-      required: false
+      required: false,
     },
-    // savedAppts: [apptSchema],
     services: [serviceSchema],
     reviews: [reviewSchema],
   },

@@ -66,18 +66,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-// type Appointment{
-//   apptId: String
-//   client: String
-//   stylist: String
-//   service: String
-//   scheduledFor: String
-// }
-
-// input ApptInput{
-//   client: String
-//   stylist: String
-//   service: String
-//   scheduledFor: String
-// }

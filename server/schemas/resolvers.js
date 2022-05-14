@@ -13,10 +13,6 @@ const resolvers = {
       return User.find();
     },
 
-    // savedAppts: async (parent, { username }) => {
-    //   const params = username ? { username } : {};
-    //   return Appointment.find(params).sort({ createdAt: -1 });
-    // },
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
@@ -90,16 +86,12 @@ const resolvers = {
         },
         { new: true, runvalidators: true }
       );
-
-      //}
-      //throw new AuthenticationError('Sytlists must be logged in to update services.');
     },
 
     removeService: async (
       parent,
       { userId, serviceId, serviceName, price }
     ) => {
-      // if (context.user){
       return User.findOneAndUpdate(
         { _id: userId },
         {
@@ -109,8 +101,6 @@ const resolvers = {
         },
         { new: true }
       );
-      // }
-      //throw new AuthenticationError('Sytlists must be logged in to update services.');
     },
   },
 };
