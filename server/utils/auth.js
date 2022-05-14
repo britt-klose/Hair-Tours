@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const secret = "mysecretssshhhhhhh"; //CHANGE TO ENV VARIABLE
+const secret = "Densley" || process.env.HAIR_TOURS_HASH;
 const expiration = "2h";
 
 module.exports = {
