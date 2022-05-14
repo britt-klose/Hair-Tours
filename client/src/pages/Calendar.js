@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  // CalendlyEventListener,
-  PopupWidget,
-} from "react-calendly";
+import { PopupWidget } from "react-calendly";
 
 const Calendar = () => {
-  //   function redirect() {
-  //     window.location.href = "localhost:3000/checkout";
-  //   }
   return (
     <div>
       <div className="App">
@@ -63,7 +57,6 @@ const Calendar = () => {
           textColor="#ffffff"
           color="#00a2ff"
         />
-        {/* <CalendlyEventListener onEventScheduled={redirect} /> */}
       </div>
     </div>
   );

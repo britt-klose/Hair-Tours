@@ -14,6 +14,4 @@ const serviceSchema = new Schema({
   },
 });
 
-// const Services = model("Services", servicesSchema);
-
 module.exports = serviceSchema;

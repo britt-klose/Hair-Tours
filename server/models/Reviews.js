@@ -1,7 +1,7 @@
 const { Schema, Types } = require("mongoose");
 
 const reviewSchema = new Schema({
-  reviewId:{
+  reviewId: {
     type: Schema.Types.ObjectId,
     default: () => new Types.ObjectId(),
   },
@@ -23,7 +23,5 @@ const reviewSchema = new Schema({
     default: 0,
   },
 });
-
-// const Reviews = model('Review', reviewSchema)
 
 module.exports = reviewSchema;
