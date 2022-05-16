@@ -62,6 +62,7 @@ export const QUERY_STYLISTS = gql`
     }
   }
 `;
+
 export const QUERY_SINGLE_STYLIST = gql`
   query users($userId: ID!) {
     user(userId: $userId) {
