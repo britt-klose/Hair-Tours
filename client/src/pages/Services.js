@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ButtonBases from "../components/selectService";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
 import { QUERY_SERVICES } from "../utils/queries";
 import { UPDATE_USER } from "../utils/mutations";
@@ -11,7 +11,6 @@ const Services = () => {
   const servicesList = data?.services || [];
 
   const [formData, setFormData] = useState({});
-  let navigate = useNavigate();
 
   const [saveServices] = useMutation(UPDATE_USER);
 
@@ -29,8 +28,6 @@ const Services = () => {
       });
 
       console.log(saveService);
-
-      navigate(`/providers`);
     } catch (err) {
       console.error(err);
     }

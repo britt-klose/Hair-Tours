@@ -86,21 +86,17 @@ const ResponsiveAppBar = () => {
                 </Link>
               </MenuItem>
               {Auth.loggedIn() ? (
-                <>
-                  <MenuItem>
-                    <Link to="/profile">
-                      <Typography textAlign="center">Profile</Typography>
-                    </Link>
-                  </MenuItem>
-                </>
+                <MenuItem>
+                  <Link to="/profile">
+                    <Typography textAlign="center">Profile</Typography>
+                  </Link>
+                </MenuItem>
               ) : (
-                <>
-                  <MenuItem>
-                    <Link to="/login">
-                      <Typography textAlign="center">Login / Signup</Typography>
-                    </Link>
-                  </MenuItem>
-                </>
+                <MenuItem>
+                  <Link to="/login">
+                    <Typography textAlign="center">Login / Signup</Typography>
+                  </Link>
+                </MenuItem>
               )}
             </Menu>
           </Box>
@@ -128,21 +124,17 @@ const ResponsiveAppBar = () => {
             </div>
             <div className="row align-center">
               {Auth.loggedIn() ? (
-                <>
-                  <Link to="/profile">
-                    <Button sx={{ my: 2, color: "white", display: "block" }}>
-                      <Typography textAlign="center">Profile</Typography>
-                    </Button>
-                  </Link>
-                </>
+                <Link to="/profile">
+                  <Button sx={{ my: 2, color: "white", display: "block" }}>
+                    <Typography textAlign="center">Profile</Typography>
+                  </Button>
+                </Link>
               ) : (
-                <>
-                  <Link to="/login">
-                    <Button sx={{ my: 2, color: "white", display: "block" }}>
-                      <Typography textAlign="center">Login / Signup</Typography>
-                    </Button>
-                  </Link>
-                </>
+                <Link to="/login">
+                  <Button sx={{ my: 2, color: "white", display: "block" }}>
+                    <Typography textAlign="center">Login / Signup</Typography>
+                  </Button>
+                </Link>
               )}
               <Avatar
                 alt="Profile Photo"
