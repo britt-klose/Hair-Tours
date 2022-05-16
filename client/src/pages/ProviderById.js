@@ -16,8 +16,6 @@ const ProviderbyId = () => {
   });
 
   const user = data?.user || [];
-  const service = user.services;
-  const review = user.reviews;
 
   function isCalendlyEvent(e) {
     return e.data.event && e.data.event.indexOf("calendly") === 0;
@@ -50,7 +48,7 @@ const ProviderbyId = () => {
           <div className="card-body text-center mt-3">
             <div name="services">
               <h1>Services:</h1>
-              <ServiceList services={service} />
+              <ServiceList services={user.services} />
             </div>
           </div>
         </div>
@@ -66,8 +64,8 @@ const ProviderbyId = () => {
         </div>
       </div>
       <div className="mt-3 p-4" style={{ border: "1px solid #1a1a1a" }}>
-        <ReviewForm userId={userId}/>
-        <ReviewList reviews={review} />
+        <ReviewForm userId={userId} />
+        <ReviewList reviews={user.reviews} />
       </div>
     </div>
   );
